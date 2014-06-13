@@ -61,6 +61,9 @@ class PlayState extends FlxState {
             throw "Terminate.";
         }
 
-        _level.collideWithLevel(_player);
+        if(_level.collideWithLevel(_player)) {
+            // 衝突したので停止要求を送る
+            _player.requestStop();
+        }
     }
 }
