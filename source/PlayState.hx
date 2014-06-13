@@ -90,6 +90,9 @@ class PlayState extends FlxState {
         _hpNext = _player.getHpRatio();
         _hpTimer = 0;
 
+
+        // デバッグ処理
+        _player.setHp(100);
 //        FlxG.debugger.drawDebug = true;
         FlxG.debugger.toggleKeys = ["ALT"];
         FlxG.watch.add(this, "_hpPrev");
@@ -126,27 +129,54 @@ class PlayState extends FlxState {
     override public function update():Void {
         super.update();
 
-        if(FlxG.keys.justPressed.ESCAPE) {
-            throw "Terminate.";
-        }
-
+        // カベとの衝突判定
         if(_level.collideWithLevel(_player)) {
             // 衝突したので停止要求を送る
             _player.requestStop();
         }
 
+        // 敵との衝突判定
+        FlxG.collide(_player, _enemys, _vsPlayerEnemy);
+
         _updateText();
 
-        #if !FLX_NO_DEBUG
+        //#if !FLX_NO_DEBUG
+        if(FlxG.keys.justPressed.ESCAPE) {
+            throw "Terminate.";
+        }
+
         if(FlxG.keys.justPressed.F) {
             _player.addHp(1);
         }
         else if(FlxG.keys.justPressed.D) {
             _player.damage(1);
         }
-        #end
+        //#end
     }
 
+    /**
+     * プレイヤーと敵との衝突
+     **/
+    private function _vsPlayerEnemy(player:Player, enemy:Enemy):Void {
+        var lvP = player.getLevel();
+        var lvE = enemy.getLevel();
+        if(lvP > lvE) {
+
+            // ダメージなし
+        }
+        else {
+            var diff = lvE - lvP;
+            var val = diff + 1; // レベル差 + 1 のダメージ
+            player.damage(val);
+        }
+
+        // 敵消滅
+        enemy.vanish();
+    }
+
+    /**
+     * テキストの更新
+     **/
     private function _updateText():Void {
         _txLevel.text = "Level: " + _player.getLevel();
         _txHp.text = "Hp: " + _player.getHp() + "/" + _player.getHpMax();

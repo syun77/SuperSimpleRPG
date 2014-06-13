@@ -26,6 +26,13 @@ class Enemy extends FlxSprite {
     }
 
     /**
+     * 消滅
+     **/
+    public function vanish():Void {
+        kill();
+    }
+
+    /**
      * レベルを取得する
      * @return レベル
      **/

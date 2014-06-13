@@ -40,6 +40,9 @@ class Player extends FlxSprite {
     private static inline var WALK_SPEED = 100; // 歩く速さ
     private static inline var TILE_SIZE = 16; // 1つあたりのタイルサイズ
 
+    // タイマー
+    private static inline var TIMER_DAMAGE = 30; // ダメージタイマー
+
     // 変数
     private var _state:State; // 状態
     private var _direction:Direction; // 向き
@@ -50,6 +53,8 @@ class Player extends FlxSprite {
     private var _hp:Int = 3; // 現在のHP
     private var _hpmax:Int = 3; // 最大HP
     private var _level:Int = 1; // 現在のレベル
+
+    private var _tDamage:Int = 0; // ダメージタイマー
 
     /**
      * コンストラクタ
@@ -77,6 +82,9 @@ class Player extends FlxSprite {
 
         // 停止要求クリア
         _reqStop = false;
+
+        // ダメージタイマー初期化
+        _tDamage = 0;
     }
 
     // HP取得
@@ -89,9 +97,36 @@ class Player extends FlxSprite {
     public function getLevel():Int return _level;
     // HPを増やす
     public function addHp(v:Int):Void _hp = if(_hp + v > _hpmax) _hpmax else _hp + v;
-    // ダメージ
-    public function damage(v:Int):Void _hp = if(_hp - v < 0) 0 else _hp - v;
 
+    /**
+     * ダメージ
+     * @param v ダメージ量
+     **/
+    public function damage(v:Int):Void {
+
+        _hp = if(_hp - v < 0) 0 else _hp - v;
+        if(_hp <= 0) {
+            // 死亡
+            vanish();
+        }
+
+        _tDamage = TIMER_DAMAGE;
+    }
+
+    /**
+     * HPを設定
+     **/
+    public function setHp(v:Int):Void {
+        _hp = v;
+        _hpmax = v;
+    }
+
+    /**
+     * 消滅
+     **/
+    public function vanish():Void {
+        kill();
+    }
 
     /**
      * 移動前の座標を覚えておく
@@ -120,6 +155,11 @@ class Player extends FlxSprite {
      * 更新
      **/
     override function update():Void {
+
+        if(_tDamage > 0) {
+            visible = _tDamage%4 < 2;
+            _tDamage--;
+        }
 
         super.update();
 
