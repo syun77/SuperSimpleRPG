@@ -1,5 +1,7 @@
 package ;
 
+import flixel.addons.editors.tiled.TiledObjectGroup;
+import flixel.addons.editors.tiled.TiledObject;
 import flixel.tile.FlxTile;
 import haxe.io.Path;
 import flixel.addons.editors.tiled.TiledPropertySet;
@@ -70,8 +72,9 @@ class TiledLevel extends TiledMap {
             // FlxTilemapでCSVレイヤーデータを読み込む
             var tilemap:FlxTilemap = new FlxTilemap();
             // タイルの幅を設定
-            tilemap.widthInTiles = width;
-            tilemap.heightInTiles = height;
+            // CSVでは設定不要
+//            tilemap.widthInTiles = width;
+//            tilemap.heightInTiles = height;
             // ロード実行
             tilemap.loadMap(tileLayer.csvData, processedPath, tileSet.tileWidth, tileSet.tileHeight, FlxTilemap.OFF, 1, 1, 1);
 
@@ -91,7 +94,40 @@ class TiledLevel extends TiledMap {
                 collidableTileLayers.push(tilemap);
             }
         }
+    }
 
+    /**
+     * オブジェクトからインスタンスを生成
+     **/
+    public function loadObjects(state:PlayState) {
+        for(group in objectGroups) {
+            for(o in group.objects) {
+                _loadObject(o, group, state);
+            }
+        }
+    }
 
+    /**
+     * オブジェクトからインスタンスを生成
+     * @param o タイルオブジェクト
+     * @param g タイルオブジェクトを所属しているグループ
+     * @param state 登録するFlxState
+     **/
+    private function _loadObject(o:TiledObject, g:TiledObjectGroup, state:PlayState):Void {
+        var px:Int = o.x;
+        var py:Int = o.y;
+
+        // Tiled情報は、左下が原点なので上下位置を反転する
+        if(o.gid != -1) {
+            py -= g.map.getGidOwner(o.gid).tileHeight;
+        }
+
+        switch(o.type.toLowerCase()) {
+            case "player_start":
+            // プレイヤーのスタート地点
+            var player = new Player(px, py);
+            state.setPlayer(player);
+            trace('player_start:$px,$py');
+        }
     }
 }

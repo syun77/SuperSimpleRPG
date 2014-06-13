@@ -16,6 +16,9 @@ class PlayState extends FlxState {
     // レベルデータ
     private var _level:TiledLevel;
 
+    // ゲームオブジェクト
+    private var _player:Player;
+
     override public function create():Void {
 
         // 背景色設定
@@ -27,9 +30,10 @@ class PlayState extends FlxState {
         add(_level.backgroundTiles);
         add(_level.foregroundTiles);
 
-        add(new Player(64, 64));
-
         super.create();
+
+        // オブジェクトを配置
+        _level.loadObjects(this);
     }
 
     /**
@@ -37,6 +41,14 @@ class PlayState extends FlxState {
      **/
     override public function destroy():Void {
         super.destroy();
+    }
+
+    /**
+     * プレイヤー登録
+     **/
+    public function setPlayer(player:Player):Void {
+        _player = player;
+        add(player);
     }
 
     /**
