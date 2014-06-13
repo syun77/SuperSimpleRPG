@@ -3,7 +3,10 @@
  <tileset firstgid="1" name="chip" tilewidth="16" tileheight="16">
   <image source="chip.png" trans="00ff00" width="256" height="256"/>
  </tileset>
- <layer name="タイル・レイヤー1" width="15" height="15">
+ <layer name="前面の背景" width="15" height="15">
+  <properties>
+   <property name="tileset" value="chip"/>
+  </properties>
   <data encoding="csv">
 18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,
 18,0,0,0,0,0,0,0,0,0,0,0,0,0,18,
