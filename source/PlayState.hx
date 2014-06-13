@@ -8,38 +8,39 @@ import flixel.ui.FlxButton;
 import flixel.util.FlxMath;
 
 /**
- * A FlxState which can be used for the actual gameplay.
- */
-class PlayState extends FlxState
-{
-    private var _level:TiledLevel;
-	/**
-	 * Function that is called up when to state is created to set it up. 
-	 */
-	override public function create():Void
-	{
-        _level = new TiledLevel("assets/levels/001.tmx");
-		super.create();
-	}
-	
-	/**
-	 * Function that is called when this state is destroyed - you might want to 
-	 * consider setting all objects this state uses to null to help garbage collection.
-	 */
-	override public function destroy():Void
-	{
-		super.destroy();
-	}
+ * メインゲーム
+ **/
+class PlayState extends FlxState {
 
-	/**
-	 * Function that is called once every frame.
-	 */
-	override public function update():Void
-	{
-		super.update();
+    // レベルデータ
+    private var _level:TiledLevel;
+
+    override public function create():Void {
+
+        // レベルデータ読み込み
+        _level = new TiledLevel("assets/levels/001.tmx");
+        // レイヤー登録
+        add(_level.backgroundTiles);
+        add(_level.foregroundTiles);
+
+        super.create();
+    }
+
+    /**
+     * 破棄
+     **/
+    override public function destroy():Void {
+        super.destroy();
+    }
+
+    /**
+     * 更新
+     **/
+    override public function update():Void {
+        super.update();
 
         if(FlxG.keys.justPressed.ESCAPE) {
             throw "Terminate.";
         }
-	}	
+    }
 }
