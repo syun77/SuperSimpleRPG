@@ -26,6 +26,12 @@ class Enemy extends FlxSprite {
     }
 
     /**
+     * レベルを取得する
+     * @return レベル
+     **/
+    public function getLevel():Int return _id;
+
+    /**
      * 初期化
      **/
     public function init(id:Int, px:Int, py:Int):Void {

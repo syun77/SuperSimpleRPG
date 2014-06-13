@@ -46,6 +46,11 @@ class Player extends FlxSprite {
     private var _prevX:Float; // 移動前のX座標
     private var _prevY:Float; // 移動前のY座標
     private var _reqStop:Bool; // 停止リクエスト
+
+    private var _hp:Int = 3; // 現在のHP
+    private var _hpmax:Int = 3; // 最大HP
+    private var _level:Int = 1; // 現在のレベル
+
     /**
      * コンストラクタ
      * @param px X座標
@@ -74,6 +79,20 @@ class Player extends FlxSprite {
         _reqStop = false;
     }
 
+    // HP取得
+    public function getHp():Int return _hp;
+    // 最大HP取得
+    public function getHpMax():Int return _hpmax;
+    // HPの割合を取得
+    public function getHpRatio():Float return 1.0 * _hp / _hpmax;
+    // レベル取得
+    public function getLevel():Int return _level;
+    // HPを増やす
+    public function addHp(v:Int):Void _hp = if(_hp + v > _hpmax) _hpmax else _hp + v;
+    // ダメージ
+    public function damage(v:Int):Void _hp = if(_hp - v < 0) 0 else _hp - v;
+
+
     /**
      * 移動前の座標を覚えておく
      **/
@@ -87,6 +106,14 @@ class Player extends FlxSprite {
      **/
     public function requestStop():Void {
         _reqStop = true;
+    }
+
+    /**
+     * レベルアップする
+     **/
+    public function levelUp():Void {
+        _level++;
+        _hpmax++;
     }
 
     /**
