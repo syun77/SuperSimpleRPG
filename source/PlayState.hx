@@ -12,11 +12,13 @@ import flixel.util.FlxMath;
  */
 class PlayState extends FlxState
 {
+    private var _level:TiledLevel;
 	/**
 	 * Function that is called up when to state is created to set it up. 
 	 */
 	override public function create():Void
 	{
+        _level = new TiledLevel("assets/levels/001.tmx");
 		super.create();
 	}
 	
@@ -35,5 +37,9 @@ class PlayState extends FlxState
 	override public function update():Void
 	{
 		super.update();
+
+        if(FlxG.keys.justPressed.ESCAPE) {
+            throw "Terminate.";
+        }
 	}	
 }
