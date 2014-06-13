@@ -1,8 +1,9 @@
 package ;
 
+import flixel.FlxG;
+import flixel.FlxObject;
 import flixel.addons.editors.tiled.TiledObjectGroup;
 import flixel.addons.editors.tiled.TiledObject;
-import flixel.tile.FlxTile;
 import haxe.io.Path;
 import flixel.addons.editors.tiled.TiledPropertySet;
 import flixel.addons.editors.tiled.TiledTileSet;
@@ -129,5 +130,33 @@ class TiledLevel extends TiledMap {
             state.setPlayer(player);
             trace('player_start:$px,$py');
         }
+    }
+
+    /**
+     * @param obj 当たり判定をするオブジェクト
+     * @param notifyCallback ヒット時の処理
+     * @param processCallback 当たり判定処理関数
+     * @return 当たっていればtrue
+     **/
+    public function collideWithLevel(obj:FlxObject, ?notifyCallback:FlxObject->FlxObject->Void, ?processCallback:FlxObject->FlxObject->Bool):Bool {
+
+        if(collidableTileLayers == null) {
+            // コリジョンがないので判定不要
+            return false;
+        }
+
+        if(processCallback == null) {
+            processCallback = FlxObject.separate;
+        }
+
+        for(map in collidableTileLayers) {
+            if(FlxG.overlap(map, obj, notifyCallback, processCallback)) {
+                // 当たった
+                return true;
+            }
+        }
+
+        // 当たっていない
+        return false;
     }
 }

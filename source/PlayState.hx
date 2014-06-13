@@ -60,5 +60,7 @@ class PlayState extends FlxState {
         if(FlxG.keys.justPressed.ESCAPE) {
             throw "Terminate.";
         }
+
+        _level.collideWithLevel(_player);
     }
 }
