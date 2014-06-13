@@ -1,5 +1,6 @@
 package;
 
+import flixel.util.FlxColor;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.FlxState;
@@ -17,11 +18,16 @@ class PlayState extends FlxState {
 
     override public function create():Void {
 
+        // 背景色設定
+        bgColor = FlxColor.SILVER;
+
         // レベルデータ読み込み
         _level = new TiledLevel("assets/levels/001.tmx");
         // レイヤー登録
         add(_level.backgroundTiles);
         add(_level.foregroundTiles);
+
+        add(new Player(64, 64));
 
         super.create();
     }
