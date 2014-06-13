@@ -23,6 +23,7 @@ class Enemy extends FlxSprite {
      **/
     public function new() {
         super();
+        //immovable = true;
     }
 
     /**
@@ -60,6 +61,7 @@ class Enemy extends FlxSprite {
             case ID_SNAKE: loadGraphic("assets/images/snake.png");
             case ID_DOKURO: loadGraphic("assets/images/dokuro.png");
         }
+
     }
 
     /**

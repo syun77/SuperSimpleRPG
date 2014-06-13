@@ -1,5 +1,6 @@
 package;
 
+import flixel.FlxObject;
 import flixel.FlxSprite;
 import flixel.ui.FlxBar;
 import flixel.text.FlxText;
@@ -92,7 +93,7 @@ class PlayState extends FlxState {
 
 
         // デバッグ処理
-        _player.setHp(100);
+        _player.setHp(10);
 //        FlxG.debugger.drawDebug = true;
         FlxG.debugger.toggleKeys = ["ALT"];
         FlxG.watch.add(this, "_hpPrev");
@@ -136,7 +137,7 @@ class PlayState extends FlxState {
         }
 
         // 敵との衝突判定
-        FlxG.collide(_player, _enemys, _vsPlayerEnemy);
+        FlxG.overlap(_player, _enemys, _vsPlayerEnemy, _collidePlayerEnemy);
 
         _updateText();
 
@@ -154,10 +155,21 @@ class PlayState extends FlxState {
         //#end
     }
 
+    private function _collidePlayerEnemy(obj1:FlxObject, obj2:FlxObject):Bool {
+        if(obj1.x == obj2.x && obj1.y == obj2.y) {
+
+            return true; // 衝突している
+        }
+
+        return false; // 衝突していない
+    }
+
     /**
      * プレイヤーと敵との衝突
      **/
     private function _vsPlayerEnemy(player:Player, enemy:Enemy):Void {
+
+
         var lvP = player.getLevel();
         var lvE = enemy.getLevel();
         if(lvP > lvE) {

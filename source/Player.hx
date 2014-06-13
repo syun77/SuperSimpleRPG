@@ -85,6 +85,9 @@ class Player extends FlxSprite {
 
         // ダメージタイマー初期化
         _tDamage = 0;
+
+        FlxG.watch.add(this, "x");
+        FlxG.watch.add(this, "y");
     }
 
     // HP取得
