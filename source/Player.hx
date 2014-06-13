@@ -60,7 +60,7 @@ class Player extends FlxSprite {
 
         // アニメーションを登録
         animation.add(ANIM_STANDBY, [0, 0, 0, 0, 0, 2, 0, 0, 0, 2], 6);
-        animation.add(ANIM_WALK, [0, 1], 6);
+        animation.add(ANIM_WALK, [0, 1], 9);
         animation.add(ANIM_MISS, [3]);
 
         // アニメーションを再生

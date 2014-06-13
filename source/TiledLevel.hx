@@ -126,9 +126,14 @@ class TiledLevel extends TiledMap {
         switch(o.type.toLowerCase()) {
             case "player_start":
             // プレイヤーのスタート地点
-            var player = new Player(px, py);
-            state.setPlayer(player);
+            state.createPlayer(px, py);
             trace('player_start:$px,$py');
+
+        }
+
+        if(65 <= o.gid && o.gid <= 69) {
+            var id = (o.gid - 65) + 1;
+            state.addEnemy(id, px, py);
         }
     }
 

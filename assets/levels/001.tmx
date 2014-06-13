@@ -25,7 +25,12 @@
 18,18,18,18,18,18,18,18,18,18,18,18,18,18,18
 </data>
  </layer>
- <objectgroup color="#00ff00" name="player start" width="15" height="15">
+ <objectgroup color="#00ff00" name="object" width="15" height="15">
   <object name="start" type="player_start" gid="1" x="192" y="208"/>
+  <object gid="65" x="176" y="128"/>
+  <object gid="66" x="144" y="80"/>
+  <object gid="67" x="96" y="96"/>
+  <object gid="68" x="80" y="112"/>
+  <object gid="69" x="48" y="128"/>
  </objectgroup>
 </map>

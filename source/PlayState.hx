@@ -1,12 +1,9 @@
 package;
 
+import flixel.group.FlxTypedGroup;
 import flixel.util.FlxColor;
 import flixel.FlxG;
-import flixel.FlxSprite;
 import flixel.FlxState;
-import flixel.text.FlxText;
-import flixel.ui.FlxButton;
-import flixel.util.FlxMath;
 
 /**
  * メインゲーム
@@ -18,6 +15,7 @@ class PlayState extends FlxState {
 
     // ゲームオブジェクト
     private var _player:Player;
+    private var _enemys:FlxTypedGroup<Enemy>;
 
     override public function create():Void {
 
@@ -32,8 +30,14 @@ class PlayState extends FlxState {
 
         super.create();
 
+        // 敵グループ生成
+        _enemys = new FlxTypedGroup<Enemy>();
+        add(_enemys);
+
         // オブジェクトを配置
         _level.loadObjects(this);
+
+//        FlxG.debugger.drawDebug = true;
     }
 
     /**
@@ -46,9 +50,17 @@ class PlayState extends FlxState {
     /**
      * プレイヤー登録
      **/
-    public function setPlayer(player:Player):Void {
-        _player = player;
-        add(player);
+    public function createPlayer(px:Float, py:Float):Void {
+        _player = new Player(px, py);
+        add(_player);
+    }
+
+    /**
+     * 敵の生成
+     **/
+    public function addEnemy(id:Int, px:Int, py:Int):Void {
+        var e:Enemy = _enemys.recycle(Enemy);
+        e.init(id, px, py);
     }
 
     /**
