@@ -255,16 +255,24 @@ class PlayState extends FlxState {
             _player.requestStop();
         }
 
-        // 敵との衝突判定
-        FlxG.overlap(_player, _enemys, _vsPlayerEnemy, _collideChip);
-
         // アイテムとの衝突判定
         FlxG.overlap(_player, _items, _vsPlayerItem, _collideChip);
+
+        // 敵との衝突判定
+        FlxG.overlap(_player, _enemys, _vsPlayerEnemy, _collideChip);
 
         if(_player.exists == false) {
             // ゲームオーバーへ
             _state = State.GameoverInit;
             _timer = TIMER_GAMEOVER_INIT;
+            return;
+        }
+
+        if(FlxG.overlap(_player, _goal, null, _collideChip)) {
+            // ステージクリア
+            _state = State.StageclearInit;
+            _timer = TIMER_STAGECLEAR_INIT;
+            return;
         }
     }
 
