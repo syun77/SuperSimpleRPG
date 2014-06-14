@@ -64,6 +64,7 @@ class Player extends FlxSprite {
     private var _level:Int = 1; // 現在のレベル
 
     private var _tDamage:Int = 0; // ダメージタイマー
+    private var _bInput:Bool = true; // 入力を有効にするかどうか
 
     /**
      * コンストラクタ
@@ -201,6 +202,13 @@ class Player extends FlxSprite {
     }
 
     /**
+     * 入力を無効にする
+     **/
+    public function disabledInput():Void {
+        _bInput = false;
+    }
+
+    /**
      * 更新
      **/
     override function update():Void {
@@ -229,6 +237,12 @@ class Player extends FlxSprite {
      * 更新・待機状態
      **/
     public function _updateStandby():Void {
+
+        if(_bInput == false) {
+            // 動かせない
+            return;
+        }
+
         if(_isOnLeft()) {
             // 左向きに歩き始める
             _direction = Direction.Left;
@@ -270,6 +284,11 @@ class Player extends FlxSprite {
      * 更新・歩く
      **/
     public function _updateWalk():Void {
+
+        if(_bInput == false) {
+            // 動かせない
+            return;
+        }
 
         var bStop:Bool = _reqStop;
 

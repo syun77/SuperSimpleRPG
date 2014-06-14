@@ -51,6 +51,7 @@ class PlayState extends FlxState {
     private var _txHp:FlxText;
     private var _txLevel:FlxText;
     private var _txStage:FlxText;
+    private var _txSubMessage:FlxText;
 
     // バー
     private var _barHp:FlxBar;
@@ -217,29 +218,32 @@ class PlayState extends FlxState {
             _timer--;
             if(_timer < 1) {
                 _state = State.GameoverMain;
-                // TODO: リトライメニューの表示
+                _displaySubMessage("Retry to press Z or Space key.");
             }
 
             case State.GameoverMain:
-            // TODO: メニューを選ばせる
-            FlxG.resetState();
+            if(_isPressDecide()) {
+                FlxG.resetState();
+            }
 
             case State.StageclearInit:
             _timer--;
             if(_timer < 1) {
+                _state = State.StageclearMain;
+                _displaySubMessage("Next to press Z or Space key.");
+            }
+
+            case State.StageclearMain:
+            if(_isPressDecide()) {
                 Reg.stage++;
                 if(false) {
                     // TODO: 全ステージクリア判定
                 }
                 else {
-                    // 次のステージが存在する
-                    _state = State.StageclearMain;
+                    // 次のステージを開始する
+                    FlxG.resetState();
                 }
             }
-
-            case State.StageclearMain:
-            // TODO: 決定キー待ちをする
-            FlxG.resetState();
         }
 
         _updateText();
@@ -292,11 +296,13 @@ class PlayState extends FlxState {
             _timer = TIMER_STAGECLEAR_INIT;
 
             _displayMessage("Stage clear!");
-            _player.active = false; // プレイヤーを止める
+            _player.disabledInput(); // プレイヤーを止める
             return;
         }
     }
-
+    /**
+     * メッセージを表示する
+     **/
     private function _displayMessage(message:String):Void {
 
         var h = 24;
@@ -304,11 +310,23 @@ class PlayState extends FlxState {
         rect.makeGraphic(FlxG.width, h*2, FlxColor.BLACK);
         rect.alpha = 0.5;
         add(rect);
-        var text:FlxText = new FlxText(0, FlxG.height/2 - h/2, FlxG.width);
+        var text:FlxText = new FlxText(0, FlxG.height/2 - h/2-8, FlxG.width*2/3);
         text.alignment = "center";
         text.text = message;
         text.size = 16;
         add(text);
+    }
+
+    /**
+     * サブメッセージを表示する
+     **/
+    private function _displaySubMessage(message:String):Void {
+
+        var text:FlxText = new FlxText(0, FlxG.height/2 + 8, FlxG.width*2/3);
+        text.alignment = "center";
+        text.text = message;
+        add(text);
+        _txSubMessage = text;
     }
 
     /**
