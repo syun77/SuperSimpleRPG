@@ -36,15 +36,21 @@ class EffectText extends FlxText {
         _mode = mode;
         switch(mode) {
             case EffectTextMode.LevelUp:
+                fieldWidth = 64;
+                x -= fieldWidth/3;
                 text = "Level up!";
-                color = FlxColor.WHITE;
+                color = FlxColor.OLIVE;
                 velocity.y = -1;
             case EffectTextMode.Damage:
+                fieldWidth = 16;
+                x -= 2;
                 text = "" + val;
                 color = FlxColor.RED;
                 velocity.y = -1.5;
                 acceleration.y = 0.1;
             case EffectTextMode.Recover:
+                fieldWidth = 16;
+                x -= 2;
                 text = "" + val;
                 color = FlxColor.GREEN;
                 velocity.y = -1;
@@ -63,6 +69,7 @@ class EffectText extends FlxText {
                     acceleration.y = 0;
                 }
             default:
+                velocity.y *= 0.95;
         }
 
         if(_timer < 30) {

@@ -1,5 +1,6 @@
 package;
 
+import EffectText;
 import flixel.FlxObject;
 import flixel.FlxSprite;
 import flixel.ui.FlxBar;
@@ -228,12 +229,18 @@ class PlayState extends FlxState {
      **/
     private function _vsPlayerItem(player:Player, item:Item):Void {
 
+        var eft:EffectText = _effecttext.recycle();
+        var px:Float = player.x;
+        var py:Float = player.y;
+
         switch(item.getId()) {
             case Item.ID_HEART:
                 player.addHp(1); // HP回復
+                eft.init(EffectTextMode.Recover, px, py);
 
             case Item.ID_POWER:
                 player.levelUp(); // レベルアップ
+                eft.init(EffectTextMode.LevelUp, px, py);
         }
         item.vanish();
     }
