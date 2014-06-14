@@ -65,20 +65,20 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf>
-          <file leaf-file-name="PlayState.hx" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="PlayState.hx" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/source/PlayState.hx">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="5025" max-vertical-offset="6510">
-                  <caret line="356" column="22" selection-start-line="356" selection-start-column="22" selection-end-line="356" selection-end-column="22" />
+                <state vertical-scroll-proportion="0.47455296" vertical-offset="4815" max-vertical-offset="6585">
+                  <caret line="344" column="42" selection-start-line="344" selection-start-column="42" selection-end-line="344" selection-end-column="42" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Player.hx" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="Player.hx" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/source/Player.hx">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.41540578" vertical-offset="1468" max-vertical-offset="5385">
+                <state vertical-scroll-proportion="0.0" vertical-offset="1468" max-vertical-offset="5385">
                   <caret line="118" column="0" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
                   <folding />
                 </state>
@@ -88,8 +88,8 @@
           <file leaf-file-name="Item.hx" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/source/Item.hx">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="375" max-vertical-offset="735">
-                  <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+                <state vertical-scroll-proportion="0.0" vertical-offset="36" max-vertical-offset="765">
+                  <caret line="12" column="29" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
                   <folding />
                 </state>
               </provider>
@@ -98,8 +98,8 @@
           <file leaf-file-name="TiledLevel.hx" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/source/TiledLevel.hx">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="1890" max-vertical-offset="2805">
-                  <caret line="146" column="35" selection-start-line="146" selection-start-column="35" selection-end-line="146" selection-end-column="35" />
+                <state vertical-scroll-proportion="0.0" vertical-offset="1800" max-vertical-offset="2850">
+                  <caret line="140" column="35" selection-start-line="140" selection-start-column="35" selection-end-line="140" selection-end-column="35" />
                   <folding />
                 </state>
               </provider>
@@ -122,8 +122,8 @@
           <file leaf-file-name="PlayState.hx" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/source/PlayState.hx">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="4178" max-vertical-offset="6510">
-                  <caret line="361" column="0" selection-start-line="361" selection-start-column="0" selection-end-line="361" selection-end-column="0" />
+                <state vertical-scroll-proportion="0.0" vertical-offset="4253" max-vertical-offset="6585">
+                  <caret line="366" column="0" selection-start-line="366" selection-start-column="0" selection-end-line="366" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -181,15 +181,15 @@
         <option value="$PROJECT_DIR$/source/TextUtil.hx" />
         <option value="/usr/lib/haxe/lib/flixel/3,3,4/flixel/ui/FlxBar.hx" />
         <option value="$PROJECT_DIR$/source/Enemy.hx" />
-        <option value="$PROJECT_DIR$/source/Item.hx" />
         <option value="$PROJECT_DIR$/source/EmitterPlayer.hx" />
         <option value="$PROJECT_DIR$/source/EmitterEnemy.hx" />
         <option value="$PROJECT_DIR$/source/Goal.hx" />
-        <option value="$PROJECT_DIR$/source/TiledLevel.hx" />
         <option value="$PROJECT_DIR$/source/Iron.hx" />
-        <option value="$PROJECT_DIR$/source/PlayState.hx" />
         <option value="$PROJECT_DIR$/source/EffectText.hx" />
         <option value="$PROJECT_DIR$/source/Player.hx" />
+        <option value="$PROJECT_DIR$/source/Item.hx" />
+        <option value="$PROJECT_DIR$/source/TiledLevel.hx" />
+        <option value="$PROJECT_DIR$/source/PlayState.hx" />
       </list>
     </option>
   </component>
@@ -913,14 +913,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/Item.hx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="375" max-vertical-offset="735">
-          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/lib/haxe/lib/flixel/3,3,4/flixel/group/FlxTypedGroup.hx">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.26885644" vertical-offset="0" max-vertical-offset="12750">
@@ -955,26 +947,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/TiledLevel.hx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1890" max-vertical-offset="2805">
-          <caret line="146" column="35" selection-start-line="146" selection-start-column="35" selection-end-line="146" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/source/Iron.hx">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
           <caret line="19" column="69" selection-start-line="19" selection-start-column="69" selection-end-line="19" selection-end-column="69" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/PlayState.hx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="5025" max-vertical-offset="6510">
-          <caret line="356" column="22" selection-start-line="356" selection-start-column="22" selection-end-line="356" selection-end-column="22" />
           <folding />
         </state>
       </provider>
@@ -989,8 +965,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/source/Player.hx">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.41540578" vertical-offset="1468" max-vertical-offset="5385">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1468" max-vertical-offset="5385">
           <caret line="118" column="0" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/TiledLevel.hx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1800" max-vertical-offset="2850">
+          <caret line="140" column="35" selection-start-line="140" selection-start-column="35" selection-end-line="140" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/Item.hx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="36" max-vertical-offset="765">
+          <caret line="12" column="29" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/PlayState.hx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.47455296" vertical-offset="4815" max-vertical-offset="6585">
+          <caret line="344" column="42" selection-start-line="344" selection-start-column="42" selection-end-line="344" selection-end-column="42" />
           <folding />
         </state>
       </provider>

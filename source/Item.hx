@@ -10,6 +10,7 @@ class Item extends FlxSprite {
 
     public static inline var ID_POWER = 1; // レベルアップ
     public static inline var ID_HEART = 2; // 体力回復
+    public static inline var ID_BANANA = 3; // バナナ
 
     private var _id:Int;
 
@@ -34,6 +35,7 @@ class Item extends FlxSprite {
         switch(id) {
             case ID_POWER: loadGraphic("assets/images/power.png", true);
             case ID_HEART: loadGraphic("assets/images/heart.png", true);
+            case ID_BANANA: loadGraphic("assets/images/banana.png", true);
         }
 
         animation.add("play", [0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1], 2+FlxRandom.intRanged(0, 4));

@@ -336,9 +336,14 @@ class PlayState extends FlxState {
         var py:Float = player.y;
 
         switch(item.getId()) {
-            case Item.ID_HEART:
+            case Item.ID_BANANA:
                 player.addHp(1); // HP回復
                 eft.init(EffectTextMode.Recover, px, py, 1);
+
+            case Item.ID_HEART:
+                var v:Int = player.getHpMax() - player.getHp();
+                player.addHp(v); // HPが最大まで回復
+                eft.init(EffectTextMode.Recover, px, py, v);
 
             case Item.ID_POWER:
                 player.levelUp(); // レベルアップ

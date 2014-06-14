@@ -45,5 +45,6 @@
   <object gid="23" x="160" y="224"/>
   <object gid="23" x="208" y="176"/>
   <object gid="23" x="176" y="160"/>
+  <object gid="2" x="176" y="192"/>
  </objectgroup>
 </map>
