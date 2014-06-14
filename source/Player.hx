@@ -62,6 +62,7 @@ class Player extends FlxSprite {
     private var _hp:Int = 3; // 現在のHP
     private var _hpmax:Int = 3; // 最大HP
     private var _level:Int = 1; // 現在のレベル
+    private var _nKey:Int = 0;  // カギを持っている数
 
     private var _tDamage:Int = 0; // ダメージタイマー
     private var _bInput:Bool = true; // 入力を有効にするかどうか
@@ -112,6 +113,17 @@ class Player extends FlxSprite {
     public function getLvRatio():Float { return 1.0 * _level / LEVEL_MAX; }
     // HPを増やす
     public function addHp(v:Int):Void { _hp = if(_hp + v > _hpmax) _hpmax else _hp + v; }
+    // カギの数を取得
+    public function getKey():Int { return _nKey; }
+    // カギを増やす
+    public function addKey(v:Int = 1):Void { _nKey += v; }
+    // カギを減らす
+    public function subKey(v:Int = 1):Void {
+        _nKey -= v;
+        if(_nKey < 0) {
+            _nKey = 0;
+        }
+    }
 
     /**
      * ダメージ

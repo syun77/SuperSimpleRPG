@@ -66,8 +66,18 @@
       <file leaf-file-name="PlayState.hx" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/source/PlayState.hx">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.41265476" vertical-offset="675" max-vertical-offset="7245">
-              <caret line="65" column="21" selection-start-line="65" selection-start-column="21" selection-end-line="65" selection-end-column="21" />
+            <state vertical-scroll-proportion="0.5202312" vertical-offset="2025" max-vertical-offset="7455">
+              <caret line="153" column="33" selection-start-line="153" selection-start-column="33" selection-end-line="153" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EffectText.hx" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/source/EffectText.hx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="1665">
+              <caret line="69" column="33" selection-start-line="69" selection-start-column="33" selection-end-line="69" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -76,8 +86,8 @@
       <file leaf-file-name="Player.hx" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/Player.hx">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2700" max-vertical-offset="5850">
-              <caret line="180" column="0" selection-start-line="180" selection-start-column="0" selection-end-line="180" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1185" max-vertical-offset="6030">
+              <caret line="116" column="49" selection-start-line="116" selection-start-column="49" selection-end-line="116" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -134,13 +144,13 @@
         <option value="$PROJECT_DIR$/source/EmitterEnemy.hx" />
         <option value="$PROJECT_DIR$/source/Goal.hx" />
         <option value="$PROJECT_DIR$/source/Iron.hx" />
-        <option value="$PROJECT_DIR$/source/EffectText.hx" />
         <option value="$PROJECT_DIR$/source/StatusBar.hx" />
         <option value="$PROJECT_DIR$/source/Reg.hx" />
-        <option value="$PROJECT_DIR$/source/Player.hx" />
         <option value="$PROJECT_DIR$/source/TiledLevel.hx" />
         <option value="$PROJECT_DIR$/source/Lock.hx" />
         <option value="$PROJECT_DIR$/source/Item.hx" />
+        <option value="$PROJECT_DIR$/source/Player.hx" />
+        <option value="$PROJECT_DIR$/source/EffectText.hx" />
         <option value="$PROJECT_DIR$/source/PlayState.hx" />
       </list>
     </option>
@@ -503,7 +513,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19722222" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2754967" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2754967" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -800,14 +810,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/EffectText.hx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6433566" vertical-offset="179" max-vertical-offset="1768">
-          <caret line="43" column="16" selection-start-line="43" selection-start-column="16" selection-end-line="43" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="858">
@@ -826,14 +828,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0990676" vertical-offset="0" max-vertical-offset="858">
           <caret line="5" column="34" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/Player.hx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2700" max-vertical-offset="5850">
-          <caret line="180" column="0" selection-start-line="180" selection-start-column="0" selection-end-line="180" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -917,10 +911,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/source/Player.hx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1185" max-vertical-offset="6030">
+          <caret line="116" column="49" selection-start-line="116" selection-start-column="49" selection-end-line="116" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/EffectText.hx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="1665">
+          <caret line="69" column="33" selection-start-line="69" selection-start-column="33" selection-end-line="69" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/source/PlayState.hx">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.41265476" vertical-offset="675" max-vertical-offset="7245">
-          <caret line="65" column="21" selection-start-line="65" selection-start-column="21" selection-end-line="65" selection-end-column="21" />
+        <state vertical-scroll-proportion="0.5202312" vertical-offset="2025" max-vertical-offset="7455">
+          <caret line="153" column="33" selection-start-line="153" selection-start-column="33" selection-end-line="153" selection-end-column="33" />
           <folding />
         </state>
       </provider>

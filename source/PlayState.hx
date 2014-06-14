@@ -51,6 +51,7 @@ class PlayState extends FlxState {
     private var _txHp:FlxText;
     private var _txLevel:FlxText;
     private var _txStage:FlxText;
+    private var _txKey:FlxText;
     private var _txSubMessage:FlxText;
 
     // バー
@@ -146,13 +147,18 @@ class PlayState extends FlxState {
             py += 8;
             _txHp = new FlxText(X, py);
             // HPバー
-            _barHp = new StatusBar(X, py+DY, 80-8*2, 4);
+            py += DY;
+            _barHp = new StatusBar(X, py, 80-8*2, 4);
+            py += 8;
+            _txKey = new FlxText(X, py);
+            _txKey.visible = false;
             add(_barLv);
             add(_barHp);
 
             add(_txStage);
             add(_txHp);
             add(_txLevel);
+            add(_txKey);
 
         }
 
@@ -401,6 +407,10 @@ class PlayState extends FlxState {
             case Item.ID_POWER:
                 player.levelUp(); // レベルアップ
                 eft.init(EffectTextMode.LevelUp, px, py);
+
+            case Item.ID_KEY:
+                player.addKey(); // カギを取得
+                eft.init(EffectTextMode.Key, px, py);
         }
         item.vanish();
     }
@@ -439,6 +449,10 @@ class PlayState extends FlxState {
         case a if(a <= 0.3): _txHp.color = FlxColor.YELLOW;
         default: _txHp.color = FlxColor.WHITE;
         }
+        if(_player.getKey() > 0) {
+            _txKey.visible = true;
+        }
+        _txKey.text = "Key x " + _player.getKey();
 
         // レベルバー更新
         _barLv.setPercent(_player.getLvRatio()*100);

@@ -9,6 +9,7 @@ enum EffectTextMode {
     LevelDown; // レベルダウン
     Damage;    // ダメージ
     Recover;   // 回復
+    Key;       // カギ
 }
 
 /**
@@ -62,6 +63,12 @@ class EffectText extends FlxText {
                 x -= 2;
                 text = "" + val;
                 color = FlxColor.GREEN;
+                velocity.y = -0.5;
+            case EffectTextMode.Key:
+                fieldWidth = 64;
+                x -= fieldWidth/3;
+                text = "Got key!";
+                color = FlxColor.OLIVE;
                 velocity.y = -0.5;
         }
         _timer = TIMER_DISP;
