@@ -23,6 +23,7 @@ class PlayState extends FlxState {
 
     // ゲームオブジェクト
     private var _player:Player;
+    private var _goal:Goal;
     private var _enemys:FlxTypedGroup<Enemy>;
     private var _items:FlxTypedGroup<Item>;
     private var _effecttext:FlxTypedGroup<EffectText>;
@@ -74,6 +75,8 @@ class PlayState extends FlxState {
 
         // オブジェクトを配置
         _level.loadObjects(this);
+        // プレイヤーはこのタイミングでアタッチする
+        add(_player);
 
         // テキストエフェクトグループ生成
         _effecttext = new FlxTypedGroup<EffectText>(8);
@@ -139,7 +142,7 @@ class PlayState extends FlxState {
      **/
     public function createPlayer(px:Float, py:Float):Void {
         _player = new Player(px, py);
-        add(_player);
+//        add(_player);
     }
 
     /**
@@ -156,6 +159,14 @@ class PlayState extends FlxState {
     public function addItem(id:Int, px:Int, py:Int):Void {
         var i:Item = _items.recycle(Item);
         i.init(id, px, py);
+    }
+
+    /**
+     * ゴールの生成
+     **/
+    public function addGoal(px:Int, py:Int):Void {
+        _goal = new Goal(px, py);
+        add(_goal);
     }
 
     /**
@@ -236,7 +247,7 @@ class PlayState extends FlxState {
         switch(item.getId()) {
             case Item.ID_HEART:
                 player.addHp(1); // HP回復
-                eft.init(EffectTextMode.Recover, px, py);
+                eft.init(EffectTextMode.Recover, px, py, 1);
 
             case Item.ID_POWER:
                 player.levelUp(); // レベルアップ
