@@ -132,8 +132,8 @@
           <file leaf-file-name="EffectText.hx" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/source/EffectText.hx">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.36038515" vertical-offset="548" max-vertical-offset="1560">
-                  <caret line="54" column="22" selection-start-line="54" selection-start-column="22" selection-end-line="54" selection-end-column="22" />
+                <state vertical-scroll-proportion="0.9587345" vertical-offset="653" max-vertical-offset="1560">
+                  <caret line="90" column="9" selection-start-line="90" selection-start-column="9" selection-end-line="90" selection-end-column="9" />
                   <folding />
                 </state>
               </provider>
@@ -957,8 +957,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/source/EffectText.hx">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36038515" vertical-offset="548" max-vertical-offset="1560">
-          <caret line="54" column="22" selection-start-line="54" selection-start-column="22" selection-end-line="54" selection-end-column="22" />
+        <state vertical-scroll-proportion="0.9587345" vertical-offset="653" max-vertical-offset="1560">
+          <caret line="90" column="9" selection-start-line="90" selection-start-column="9" selection-end-line="90" selection-end-column="9" />
           <folding />
         </state>
       </provider>
