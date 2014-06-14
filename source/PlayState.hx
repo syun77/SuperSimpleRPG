@@ -11,12 +11,26 @@ import flixel.FlxG;
 import flixel.FlxState;
 
 /**
+ * 状態
+ **/
+private enum State {
+    Init; // 初期化
+    Main; // メイン
+    StageclearInit; // ステージクリア・初期化
+    StageclearMain; // ステージクリア・メイン
+    GameoverInit; // ゲームオーバー・初期化
+    GameoverMain; // ゲームオーバー・メイン
+}
+
+/**
  * メインゲーム
  **/
 class PlayState extends FlxState {
 
     // ■定数
-    private static inline var TIMER_HP_BAR:Int = 100;
+    private static inline var TIMER_HP_BAR = 100;
+    private static inline var TIMER_GAMEOVER_INIT = 30;
+    private static inline var TIMER_STAGECLEAR_INIT = 30;
 
     // レベルデータ
     private var _level:TiledLevel;
@@ -42,6 +56,10 @@ class PlayState extends FlxState {
     private var _hpPrev:Float;
     private var _hpNext:Float;
     private var _hpTimer:Float;
+
+    // ゲーム制御
+    private var _state:State = State.Init;
+    private var _timer:Int = 0;
 
     override public function create():Void {
 
@@ -120,6 +138,10 @@ class PlayState extends FlxState {
         _hpNext = _player.getHpRatio();
         _hpTimer = 0;
 
+        // ゲーム制御変数の初期化
+        _state = State.Init;
+        _timer = 0;
+
 
         // デバッグ処理
         _player.setHp(10);
@@ -175,6 +197,58 @@ class PlayState extends FlxState {
     override public function update():Void {
         super.update();
 
+        switch(_state) {
+            case State.Init: _updateInit();
+            case State.Main: _updateMain();
+            case State.GameoverInit:
+            _timer--;
+            if(_timer < 1) {
+                _state = State.GameoverMain;
+                // TODO: リトライメニューの表示
+            }
+
+            case State.GameoverMain:
+            // TODO: メニューを選ばせる
+            FlxG.resetState();
+
+            case State.StageclearInit:
+            _timer--;
+            if(_timer < 1) {
+                Reg.stage++;
+                if(false) {
+                    // TODO: 全ステージクリア判定
+                }
+                else {
+                    // 次のステージが存在する
+                    _state = State.StageclearMain;
+                }
+            }
+
+            case State.StageclearMain:
+            // TODO: 決定キー待ちをする
+            FlxG.resetState();
+        }
+
+        _updateText();
+
+        //#if !FLX_NO_DEBUG
+        _updateDebug();
+        //#end
+    }
+
+    /**
+     * 更新・初期化
+     **/
+    private function _updateInit():Void {
+
+        _state = State.Main;
+    }
+
+    /**
+     * 更新・メイン
+     **/
+    private function _updateMain():Void {
+
         // カベとの衝突判定
         if(_level.collideWithLevel(_player)) {
             // 衝突したので停止要求を送る
@@ -187,22 +261,16 @@ class PlayState extends FlxState {
         // アイテムとの衝突判定
         FlxG.overlap(_player, _items, _vsPlayerItem, _collideChip);
 
-        _updateText();
-
-        //#if !FLX_NO_DEBUG
-        if(FlxG.keys.justPressed.ESCAPE) {
-            throw "Terminate.";
+        if(_player.exists == false) {
+            // ゲームオーバーへ
+            _state = State.GameoverInit;
+            _timer = TIMER_GAMEOVER_INIT;
         }
-
-        if(FlxG.keys.justPressed.F) {
-            _player.addHp(1);
-        }
-        else if(FlxG.keys.justPressed.D) {
-            _player.damage(1);
-        }
-        //#end
     }
 
+    /**
+     * 座標が一致したら当たりにする当たり判定
+     **/
     private function _collideChip(obj1:FlxObject, obj2:FlxObject):Bool {
         if(obj1.x == obj2.x && obj1.y == obj2.y) {
 
@@ -296,6 +364,19 @@ class PlayState extends FlxState {
         else {
             // 普通に更新
             _barHp.percent = _player.getHpRatio()*100;
+        }
+    }
+
+    private function _updateDebug():Void {
+        if(FlxG.keys.justPressed.ESCAPE) {
+            throw "Terminate.";
+        }
+
+        if(FlxG.keys.justPressed.F) {
+            _player.addHp(1);
+        }
+        else if(FlxG.keys.justPressed.D) {
+            _player.damage(1);
         }
     }
 }
