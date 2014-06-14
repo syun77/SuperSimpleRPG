@@ -5,9 +5,10 @@ import flixel.util.FlxColor;
 import flixel.text.FlxText;
 
 enum EffectTextMode {
-    LevelUp; // レベルアップ
-    Damage;  // ダメージ
-    Recover; // 回復
+    LevelUp;   // レベルアップ
+    LevelDown; // レベルダウン
+    Damage;    // ダメージ
+    Recover;   // 回復
 }
 
 /**
@@ -41,9 +42,17 @@ class EffectText extends FlxText {
                 text = "Level up!";
                 color = FlxColor.OLIVE;
                 velocity.y = -1;
+            case EffectTextMode.LevelDown:
+                fieldWidth = 64;
+                x -= fieldWidth/3;
+                text = "Level down";
+                color = FlxColor.RED;
+                velocity.y = -1.5;
+                acceleration.y = 0.1;
+
             case EffectTextMode.Damage:
-                fieldWidth = 16;
-                x -= 2;
+                fieldWidth = 32;
+                x -= 10;
                 text = "" + val;
                 color = FlxColor.RED;
                 velocity.y = -1.5;
@@ -64,6 +73,11 @@ class EffectText extends FlxText {
 
         switch(_mode) {
             case EffectTextMode.Damage:
+                if(y > _startY) {
+                    velocity.y = 0;
+                    acceleration.y = 0;
+                }
+            case EffectTextMode.LevelDown:
                 if(y > _startY) {
                     velocity.y = 0;
                     acceleration.y = 0;

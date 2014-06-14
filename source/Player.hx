@@ -116,9 +116,6 @@ class Player extends FlxSprite {
      **/
     public function damage(v:Int):Void {
         var text:EffectText = s_text.recycle();
-        if(text == null) {
-            throw "text is null";
-        }
         text.init(EffectTextMode.Damage, x, y, v);
 
         _hp = if(_hp - v < 0) 0 else _hp - v;
@@ -182,6 +179,7 @@ class Player extends FlxSprite {
 
         _level++;
         _hpmax++;
+        _hp++;
     }
 
     // レベルが最低

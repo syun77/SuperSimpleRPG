@@ -274,6 +274,9 @@ class PlayState extends FlxState {
         // 敵との衝突判定
         FlxG.overlap(_player, _enemys, _vsPlayerEnemy, _collideChip);
 
+        // 鉄球との衝突判定
+        FlxG.overlap(_player, _irons, _vsPlayerIron, _collideChip);
+
         if(_player.exists == false) {
             // ゲームオーバーへ
             _state = State.GameoverInit;
@@ -305,7 +308,6 @@ class PlayState extends FlxState {
      * プレイヤーと敵との衝突
      **/
     private function _vsPlayerEnemy(player:Player, enemy:Enemy):Void {
-
 
         var lvP = player.getLevel();
         var lvE = enemy.getLevel();
@@ -343,6 +345,29 @@ class PlayState extends FlxState {
                 eft.init(EffectTextMode.LevelUp, px, py);
         }
         item.vanish();
+    }
+
+    /**
+     * プレイヤーと鉄球との衝突
+     **/
+    private function _vsPlayerIron(player:Player, iron:Iron):Void {
+
+        if(player.isLevelMin()) {
+            // レベルが最低ならダメージ
+            player.damage(999);
+        }
+        else {
+            // Lv2以上ならレベルダウン
+            player.levelDown(); // レベルダウン
+            var eft:EffectText = _effecttext.recycle();
+            var px:Float = player.x;
+            var py:Float = player.y;
+            eft.init(EffectTextMode.LevelDown, px, py);
+        }
+
+        // 鉄球消滅
+        iron.kill();
+        _emitterEnemy.explode(iron.x+iron.width/2, iron.y+iron.height/2);
     }
 
     /**
