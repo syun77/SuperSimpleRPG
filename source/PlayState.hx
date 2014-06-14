@@ -281,6 +281,8 @@ class PlayState extends FlxState {
             // ゲームオーバーへ
             _state = State.GameoverInit;
             _timer = TIMER_GAMEOVER_INIT;
+
+            _displayMessage("Game over!");
             return;
         }
 
@@ -288,8 +290,25 @@ class PlayState extends FlxState {
             // ステージクリア
             _state = State.StageclearInit;
             _timer = TIMER_STAGECLEAR_INIT;
+
+            _displayMessage("Stage clear!");
+            _player.active = false; // プレイヤーを止める
             return;
         }
+    }
+
+    private function _displayMessage(message:String):Void {
+
+        var h = 24;
+        var rect:FlxSprite = new FlxSprite(0, FlxG.height/2 - h);
+        rect.makeGraphic(FlxG.width, h*2, FlxColor.BLACK);
+        rect.alpha = 0.5;
+        add(rect);
+        var text:FlxText = new FlxText(0, FlxG.height/2 - h/2, FlxG.width);
+        text.alignment = "center";
+        text.text = message;
+        text.size = 16;
+        add(text);
     }
 
     /**
@@ -429,5 +448,9 @@ class PlayState extends FlxState {
         else if(FlxG.keys.justPressed.D) {
             _player.damage(1);
         }
+    }
+
+    private function _isPressDecide():Bool {
+        return FlxG.keys.anyJustPressed(["Z", "SPACE"]);
     }
 }
