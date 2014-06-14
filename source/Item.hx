@@ -1,5 +1,6 @@
 package ;
 
+import flixel.util.FlxRandom;
 import flixel.FlxSprite;
 
 /**
@@ -35,7 +36,7 @@ class Item extends FlxSprite {
             case ID_HEART: loadGraphic("assets/images/heart.png", true);
         }
 
-        animation.add("play", [0, 0, 1, 0, 1], 3);
+        animation.add("play", [0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1], 2+FlxRandom.intRanged(0, 4));
         animation.play("play");
     }
 

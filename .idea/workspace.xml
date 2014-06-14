@@ -54,8 +54,8 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
-    <breakpoint_rules converted="true" />
     <ui_properties converted="true" />
+    <breakpoint_rules converted="true" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
@@ -65,21 +65,21 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf>
-          <file leaf-file-name="PlayState.hx" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="PlayState.hx" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/source/PlayState.hx">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.7478992" vertical-offset="2706" max-vertical-offset="4020">
-                  <caret line="216" column="21" selection-start-line="216" selection-start-column="21" selection-end-line="216" selection-end-column="21" />
+                <state vertical-scroll-proportion="0.0" vertical-offset="3675" max-vertical-offset="4556">
+                  <caret line="241" column="17" selection-start-line="241" selection-start-column="17" selection-end-line="241" selection-end-column="17" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Item.hx" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="Item.hx" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/source/Item.hx">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="720">
-                  <caret line="37" column="47" selection-start-line="37" selection-start-column="47" selection-end-line="37" selection-end-column="47" />
+                <state vertical-scroll-proportion="0.7846154" vertical-offset="0" max-vertical-offset="845">
+                  <caret line="39" column="30" selection-start-line="39" selection-start-column="30" selection-end-line="39" selection-end-column="30" />
                   <folding />
                 </state>
               </provider>
@@ -88,8 +88,8 @@
           <file leaf-file-name="Player.hx" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/source/Player.hx">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="593" max-vertical-offset="4695">
-                  <caret line="89" column="33" selection-start-line="89" selection-start-column="33" selection-end-line="89" selection-end-column="33" />
+                <state vertical-scroll-proportion="0.0" vertical-offset="2244" max-vertical-offset="5321">
+                  <caret line="132" column="0" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -98,8 +98,8 @@
           <file leaf-file-name="TiledLevel.hx" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/source/TiledLevel.hx">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="1791" max-vertical-offset="2715">
-                  <caret line="140" column="46" selection-start-line="140" selection-start-column="46" selection-end-line="140" selection-end-column="46" />
+                <state vertical-scroll-proportion="0.0" vertical-offset="2516" max-vertical-offset="3077">
+                  <caret line="148" column="32" selection-start-line="148" selection-start-column="32" selection-end-line="148" selection-end-column="32" />
                   <folding />
                 </state>
               </provider>
@@ -112,13 +112,9 @@
           <file leaf-file-name="PlayState.hx" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/source/PlayState.hx">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="433" max-vertical-offset="4020">
-                  <caret line="176" column="33" selection-start-line="176" selection-start-column="33" selection-end-line="176" selection-end-column="33" />
-                  <folding>
-                    <marker date="1402705590000" expanded="true" signature="3197:3867" placeholder="{...}" />
-                    <marker date="1402705590000" expanded="true" signature="4185:4505" placeholder="{...}" />
-                    <marker date="1402705590000" expanded="true" signature="4284:4318" placeholder="{...}" />
-                  </folding>
+                <state vertical-scroll-proportion="0.0" vertical-offset="4454" max-vertical-offset="4556">
+                  <caret line="241" column="18" selection-start-line="241" selection-start-column="18" selection-end-line="241" selection-end-column="18" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -126,8 +122,8 @@
           <file leaf-file-name="Enemy.hx" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/source/Enemy.hx">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.009628611" vertical-offset="428" max-vertical-offset="1365">
-                  <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
+                <state vertical-scroll-proportion="0.0" vertical-offset="629" max-vertical-offset="1547">
+                  <caret line="37" column="8" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="8" />
                   <folding />
                 </state>
               </provider>
@@ -152,19 +148,20 @@
         <option value="$PROJECT_DIR$/source/TextFormat.hx" />
         <option value="$PROJECT_DIR$/source/TextUtil.hx" />
         <option value="/usr/lib/haxe/lib/flixel/3,3,4/flixel/ui/FlxBar.hx" />
-        <option value="$PROJECT_DIR$/source/Enemy.hx" />
         <option value="$PROJECT_DIR$/source/Player.hx" />
         <option value="$PROJECT_DIR$/source/TiledLevel.hx" />
-        <option value="$PROJECT_DIR$/source/Item.hx" />
         <option value="$PROJECT_DIR$/source/PlayState.hx" />
+        <option value="$PROJECT_DIR$/source/Enemy.hx" />
+        <option value="$PROJECT_DIR$/source/Item.hx" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
+    <option name="x" value="2" />
     <option name="y" value="22" />
-    <option name="width" value="1440" />
-    <option name="height" value="824" />
+    <option name="width" value="1867" />
+    <option name="height" value="1004" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -192,7 +189,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -245,6 +241,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -267,7 +264,7 @@
     <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="FullScreen" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="Play&#9;FILE&#9;file:///Users/syun/Desktop/MyProject/source/PlayState.hx&#10;Pla&#9;FILE&#9;file:///Users/syun/Desktop/MyProject/source/PlayState.hx&#10;Tile&#9;FILE&#9;file:///Users/syun/Desktop/MyProject/source/TiledLevel.hx&#10;PlaySta&#9;FILE&#9;file:///Users/syun/Desktop/MyProject/source/PlayState.hx&#10;PlaySt&#9;null&#9;null&#10;tileLe&#9;FILE&#9;file:///Users/syun/Desktop/MyProject/source/TiledLevel.hx&#10;PlayState&#9;null&#9;null&#10;Main.hx&#9;FILE&#9;file:///Users/syun/Desktop/MyProject/source/Main.hx&#10;Main&#9;RUN_CONFIGURATION&#9;Main" />
+    <property name="SearchEverywhereHistoryKey" value="Item&#9;null&#9;null&#10;Play&#9;FILE&#9;file:///Users/syun/Desktop/MyProject/source/PlayState.hx&#10;Pla&#9;FILE&#9;file:///Users/syun/Desktop/MyProject/source/PlayState.hx&#10;Tile&#9;FILE&#9;file:///Users/syun/Desktop/MyProject/source/TiledLevel.hx&#10;PlaySta&#9;FILE&#9;file:///Users/syun/Desktop/MyProject/source/PlayState.hx&#10;PlaySt&#9;null&#9;null&#10;tileLe&#9;FILE&#9;file:///Users/syun/Desktop/MyProject/source/TiledLevel.hx&#10;PlayState&#9;null&#9;null&#10;Main.hx&#9;FILE&#9;file:///Users/syun/Desktop/MyProject/source/Main.hx&#10;Main&#9;RUN_CONFIGURATION&#9;Main" />
     <property name="LayoutCode.rearrangeEntriesHaxe" value="false" />
   </component>
   <component name="PublishConfig">
@@ -302,6 +299,10 @@
       <option name="PROGRAM_PARAMETERS" />
       <method />
     </configuration>
+    <configuration default="true" type="HXCPPRemoteRunConfigurationType" factoryName="HXCPP Remote Debug">
+      <module name="" />
+      <method />
+    </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
       <module name="" />
       <option name="TESTING_TYPE" value="0" />
@@ -323,16 +324,25 @@
       <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
       <method />
     </configuration>
-    <configuration default="true" type="HXCPPRemoteRunConfigurationType" factoryName="HXCPP Remote Debug">
-      <module name="" />
-      <method />
-    </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
       <option name="SHMEM_ADDRESS" value="javadebug" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="5005" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
@@ -362,19 +372,6 @@
       <listeners />
       <method />
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method />
-    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" />
       <option name="VM_PARAMETERS" />
@@ -387,18 +384,6 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="" />
       <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="HaxeApplicationRunConfiguration" factoryName="Haxe Application">
-      <module name="" />
-      <option name="customExecutable" value="false" />
-      <option name="customExecutablePath" value="" />
-      <option name="customFileToLaunch" value="false" />
-      <option name="customFileToLaunchPath" value="" />
-      <option name="name" value="Haxe Application" />
-      <option name="saveOutputToFile" value="false" />
-      <option name="showConsoleOnStdErr" value="false" />
-      <option name="showConsoleOnStdOut" value="false" />
       <method />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
@@ -419,6 +404,18 @@
       </option>
       <envs />
       <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="HaxeApplicationRunConfiguration" factoryName="Haxe Application">
+      <module name="" />
+      <option name="customExecutable" value="false" />
+      <option name="customExecutablePath" value="" />
+      <option name="customFileToLaunch" value="false" />
+      <option name="customFileToLaunchPath" value="" />
+      <option name="name" value="Haxe Application" />
+      <option name="saveOutputToFile" value="false" />
+      <option name="showConsoleOnStdErr" value="false" />
+      <option name="showConsoleOnStdOut" value="false" />
       <method />
     </configuration>
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
@@ -512,7 +509,7 @@
     <option name="totallyTimeSpent" value="835000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1440" height="824" extended-state="6" />
+    <frame x="2" y="22" width="1867" height="1004" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -525,14 +522,14 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3258278" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32505643" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19583334" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2794702" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19561644" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27765238" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -566,6 +563,38 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/source/Player.hx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1513" max-vertical-offset="4590">
+          <caret line="89" column="13" selection-start-line="89" selection-start-column="13" selection-end-line="89" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/TiledLevel.hx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2380" max-vertical-offset="2941">
+          <caret line="140" column="32" selection-start-line="140" selection-start-column="32" selection-end-line="140" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/PlayState.hx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2992" max-vertical-offset="3315">
+          <caret line="176" column="13" selection-start-line="176" selection-start-column="13" selection-end-line="176" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/Enemy.hx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="493" max-vertical-offset="1394">
+          <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/source/PlayState.hx">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1065">
@@ -730,7 +759,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5672269" vertical-offset="10335" max-vertical-offset="34140">
           <caret line="716" column="8" selection-start-line="716" selection-start-column="8" selection-end-line="716" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -789,7 +817,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.4481547" vertical-offset="298" max-vertical-offset="2703">
           <caret line="66" column="7" selection-start-line="66" selection-start-column="7" selection-end-line="66" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -843,8 +870,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/source/Player.hx">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="593" max-vertical-offset="4695">
-          <caret line="89" column="33" selection-start-line="89" selection-start-column="33" selection-end-line="89" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="2244" max-vertical-offset="5321">
+          <caret line="132" column="0" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -875,32 +902,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/source/Enemy.hx">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.009628611" vertical-offset="428" max-vertical-offset="1365">
-          <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="629" max-vertical-offset="1547">
+          <caret line="37" column="8" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/source/TiledLevel.hx">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1791" max-vertical-offset="2715">
-          <caret line="140" column="46" selection-start-line="140" selection-start-column="46" selection-end-line="140" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/Item.hx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="720">
-          <caret line="37" column="47" selection-start-line="37" selection-start-column="47" selection-end-line="37" selection-end-column="47" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="2516" max-vertical-offset="3077">
+          <caret line="148" column="32" selection-start-line="148" selection-start-column="32" selection-end-line="148" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/source/PlayState.hx">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7478992" vertical-offset="2706" max-vertical-offset="4020">
-          <caret line="216" column="21" selection-start-line="216" selection-start-column="21" selection-end-line="216" selection-end-column="21" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="3675" max-vertical-offset="4556">
+          <caret line="241" column="17" selection-start-line="241" selection-start-column="17" selection-end-line="241" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/Item.hx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7846154" vertical-offset="0" max-vertical-offset="845">
+          <caret line="39" column="30" selection-start-line="39" selection-start-column="30" selection-end-line="39" selection-end-column="30" />
           <folding />
         </state>
       </provider>
