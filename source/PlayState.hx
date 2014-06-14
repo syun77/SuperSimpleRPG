@@ -54,6 +54,7 @@ class PlayState extends FlxState {
     private var _txSubMessage:FlxText;
 
     // バー
+    private var _barLv:StatusBar;
     private var _barHp:StatusBar;
 
     // ゲーム制御
@@ -125,9 +126,12 @@ class PlayState extends FlxState {
             py += DY;
             _txLevel = new FlxText(X, py);
             py += DY;
+            _barLv = new StatusBar(X, py, 80-8*2, 4);
+            py += 8;
             _txHp = new FlxText(X, py);
             // HPバー
             _barHp = new StatusBar(X, py+DY, 80-8*2, 4);
+            add(_barLv);
             add(_barHp);
 
             add(_txStage);
@@ -413,6 +417,8 @@ class PlayState extends FlxState {
         default: _txHp.color = FlxColor.WHITE;
         }
 
+        // レベルバー更新
+        _barLv.setPercent(_player.getLvRatio()*100);
         // HPバー更新
         _barHp.setPercent(_player.getHpRatio()*100);
     }

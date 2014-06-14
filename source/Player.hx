@@ -101,15 +101,17 @@ class Player extends FlxSprite {
     }
 
     // HP取得
-    public function getHp():Int return _hp;
+    public function getHp():Int { return _hp; }
     // 最大HP取得
-    public function getHpMax():Int return _hpmax;
+    public function getHpMax():Int { return _hpmax; }
     // HPの割合を取得
-    public function getHpRatio():Float return 1.0 * _hp / _hpmax;
+    public function getHpRatio():Float { return 1.0 * _hp / _hpmax; }
     // レベル取得
-    public function getLevel():Int return _level;
+    public function getLevel():Int { return _level; }
+    // レベルの割合を取得
+    public function getLvRatio():Float { return 1.0 * _level / LEVEL_MAX; }
     // HPを増やす
-    public function addHp(v:Int):Void _hp = if(_hp + v > _hpmax) _hpmax else _hp + v;
+    public function addHp(v:Int):Void { _hp = if(_hp + v > _hpmax) _hpmax else _hp + v; }
 
     /**
      * ダメージ
@@ -168,7 +170,7 @@ class Player extends FlxSprite {
     }
 
     // レベルが最大
-    public function isLevelMax():Bool return _level >= LEVEL_MAX;
+    public function isLevelMax():Bool { return _level >= LEVEL_MAX; }
     /**
      * レベルアップする
      **/
@@ -184,7 +186,7 @@ class Player extends FlxSprite {
     }
 
     // レベルが最低
-    public function isLevelMin():Bool return _level <= LEVEL_MIN;
+    public function isLevelMin():Bool { return _level <= LEVEL_MIN; }
     /**
      * レベルダウンする
      **/
