@@ -16,7 +16,7 @@ enum EffectTextMode {
  **/
 class EffectText extends FlxText {
 
-    public static inline var TIMER_DISP = 90;
+    public static inline var TIMER_DISP = 120;
 
     private var _mode:EffectTextMode;
     private var _timer:Int;
@@ -41,14 +41,14 @@ class EffectText extends FlxText {
                 x -= fieldWidth/3;
                 text = "Level up!";
                 color = FlxColor.OLIVE;
-                velocity.y = -1;
+                velocity.y = -0.5;
             case EffectTextMode.LevelDown:
                 fieldWidth = 64;
                 x -= fieldWidth/3;
                 text = "Level down";
                 color = FlxColor.RED;
                 velocity.y = -1.5;
-                acceleration.y = 0.1;
+                acceleration.y = 0.08;
 
             case EffectTextMode.Damage:
                 fieldWidth = 32;
@@ -56,13 +56,13 @@ class EffectText extends FlxText {
                 text = "" + val;
                 color = FlxColor.RED;
                 velocity.y = -1.5;
-                acceleration.y = 0.1;
+                acceleration.y = 0.08;
             case EffectTextMode.Recover:
                 fieldWidth = 16;
                 x -= 2;
                 text = "" + val;
                 color = FlxColor.GREEN;
-                velocity.y = -1;
+                velocity.y = -0.5;
         }
         _timer = TIMER_DISP;
     }
