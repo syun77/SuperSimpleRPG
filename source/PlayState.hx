@@ -150,7 +150,10 @@ class PlayState extends FlxState {
         }
 
         // 敵との衝突判定
-        FlxG.overlap(_player, _enemys, _vsPlayerEnemy, _collidePlayerEnemy);
+        FlxG.overlap(_player, _enemys, _vsPlayerEnemy, _collideChip);
+
+        // アイテムとの衝突判定
+        FlxG.overlap(_player, _items, _vsPlayerItem, _collideChip);
 
         _updateText();
 
@@ -168,7 +171,7 @@ class PlayState extends FlxState {
         //#end
     }
 
-    private function _collidePlayerEnemy(obj1:FlxObject, obj2:FlxObject):Bool {
+    private function _collideChip(obj1:FlxObject, obj2:FlxObject):Bool {
         if(obj1.x == obj2.x && obj1.y == obj2.y) {
 
             return true; // 衝突している
@@ -197,6 +200,21 @@ class PlayState extends FlxState {
 
         // 敵消滅
         enemy.vanish();
+    }
+
+    /**
+     * プレイヤーとアイテムとの衝突
+     **/
+    private function _vsPlayerItem(player:Player, item:Item):Void {
+
+        switch(item.getId()) {
+            case Item.ID_HEART:
+                player.addHp(1); // HP回復
+
+            case Item.ID_POWER:
+                player.levelUp(); // レベルアップ
+        }
+        item.vanish();
     }
 
     /**

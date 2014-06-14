@@ -65,20 +65,20 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf>
-          <file leaf-file-name="PlayState.hx" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="PlayState.hx" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/source/PlayState.hx">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="1710" max-vertical-offset="3750">
-                  <caret line="136" column="26" selection-start-line="136" selection-start-column="26" selection-end-line="136" selection-end-column="26" />
+                <state vertical-scroll-proportion="0.7478992" vertical-offset="2706" max-vertical-offset="4020">
+                  <caret line="216" column="21" selection-start-line="216" selection-start-column="21" selection-end-line="216" selection-end-column="21" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Item.hx" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="Item.hx" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/source/Item.hx">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.7773109" vertical-offset="0" max-vertical-offset="720">
+                <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="720">
                   <caret line="37" column="47" selection-start-line="37" selection-start-column="47" selection-end-line="37" selection-end-column="47" />
                   <folding />
                 </state>
@@ -112,12 +112,12 @@
           <file leaf-file-name="PlayState.hx" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/source/PlayState.hx">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="388" max-vertical-offset="3750">
-                  <caret line="173" column="33" selection-start-line="173" selection-start-column="33" selection-end-line="173" selection-end-column="33" />
+                <state vertical-scroll-proportion="0.0" vertical-offset="433" max-vertical-offset="4020">
+                  <caret line="176" column="33" selection-start-line="176" selection-start-column="33" selection-end-line="176" selection-end-column="33" />
                   <folding>
-                    <marker date="1402705284000" expanded="true" signature="3197:3783" placeholder="{...}" />
-                    <marker date="1402705284000" expanded="true" signature="4108:4428" placeholder="{...}" />
-                    <marker date="1402705284000" expanded="true" signature="4207:4241" placeholder="{...}" />
+                    <marker date="1402705590000" expanded="true" signature="3197:3867" placeholder="{...}" />
+                    <marker date="1402705590000" expanded="true" signature="4185:4505" placeholder="{...}" />
+                    <marker date="1402705590000" expanded="true" signature="4284:4318" placeholder="{...}" />
                   </folding>
                 </state>
               </provider>
@@ -155,8 +155,8 @@
         <option value="$PROJECT_DIR$/source/Enemy.hx" />
         <option value="$PROJECT_DIR$/source/Player.hx" />
         <option value="$PROJECT_DIR$/source/TiledLevel.hx" />
-        <option value="$PROJECT_DIR$/source/PlayState.hx" />
         <option value="$PROJECT_DIR$/source/Item.hx" />
+        <option value="$PROJECT_DIR$/source/PlayState.hx" />
       </list>
     </option>
   </component>
@@ -267,7 +267,7 @@
     <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="FullScreen" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="Pla&#9;FILE&#9;file:///Users/syun/Desktop/MyProject/source/PlayState.hx&#10;Tile&#9;FILE&#9;file:///Users/syun/Desktop/MyProject/source/TiledLevel.hx&#10;PlaySta&#9;FILE&#9;file:///Users/syun/Desktop/MyProject/source/PlayState.hx&#10;PlaySt&#9;null&#9;null&#10;tileLe&#9;FILE&#9;file:///Users/syun/Desktop/MyProject/source/TiledLevel.hx&#10;PlayState&#9;null&#9;null&#10;Main.hx&#9;FILE&#9;file:///Users/syun/Desktop/MyProject/source/Main.hx&#10;Main&#9;RUN_CONFIGURATION&#9;Main" />
+    <property name="SearchEverywhereHistoryKey" value="Play&#9;FILE&#9;file:///Users/syun/Desktop/MyProject/source/PlayState.hx&#10;Pla&#9;FILE&#9;file:///Users/syun/Desktop/MyProject/source/PlayState.hx&#10;Tile&#9;FILE&#9;file:///Users/syun/Desktop/MyProject/source/TiledLevel.hx&#10;PlaySta&#9;FILE&#9;file:///Users/syun/Desktop/MyProject/source/PlayState.hx&#10;PlaySt&#9;null&#9;null&#10;tileLe&#9;FILE&#9;file:///Users/syun/Desktop/MyProject/source/TiledLevel.hx&#10;PlayState&#9;null&#9;null&#10;Main.hx&#9;FILE&#9;file:///Users/syun/Desktop/MyProject/source/Main.hx&#10;Main&#9;RUN_CONFIGURATION&#9;Main" />
     <property name="LayoutCode.rearrangeEntriesHaxe" value="false" />
   </component>
   <component name="PublishConfig">
@@ -889,18 +889,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/PlayState.hx">
+    <entry file="file://$PROJECT_DIR$/source/Item.hx">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1710" max-vertical-offset="3750">
-          <caret line="136" column="26" selection-start-line="136" selection-start-column="26" selection-end-line="136" selection-end-column="26" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="720">
+          <caret line="37" column="47" selection-start-line="37" selection-start-column="47" selection-end-line="37" selection-end-column="47" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/Item.hx">
+    <entry file="file://$PROJECT_DIR$/source/PlayState.hx">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7773109" vertical-offset="0" max-vertical-offset="720">
-          <caret line="37" column="47" selection-start-line="37" selection-start-column="47" selection-end-line="37" selection-end-column="47" />
+        <state vertical-scroll-proportion="0.7478992" vertical-offset="2706" max-vertical-offset="4020">
+          <caret line="216" column="21" selection-start-line="216" selection-start-column="21" selection-end-line="216" selection-end-column="21" />
           <folding />
         </state>
       </provider>
