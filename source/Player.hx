@@ -1,5 +1,7 @@
 package ;
 
+import EffectText.EffectTextMode;
+import flixel.group.FlxTypedGroup;
 import haxe.web.Dispatch.MatchRule;
 import flixel.util.FlxPoint;
 import flixel.FlxBasic;
@@ -42,6 +44,9 @@ class Player extends FlxSprite {
 
     // タイマー
     private static inline var TIMER_DAMAGE = 30; // ダメージタイマー
+
+    public static var s_emiiter:EmitterPlayer = null;
+    public static var s_text:FlxTypedGroup<EffectText> = null;
 
     // 変数
     private var _state:State; // 状態
@@ -106,11 +111,22 @@ class Player extends FlxSprite {
      * @param v ダメージ量
      **/
     public function damage(v:Int):Void {
+        var text:EffectText = s_text.recycle();
+        if(text == null) {
+            throw "text is null";
+        }
+        text.init(EffectTextMode.Damage, x, y, v);
 
         _hp = if(_hp - v < 0) 0 else _hp - v;
         if(_hp <= 0) {
             // 死亡
             vanish();
+            FlxG.camera.flash(0xffFFFFFF, 0.3);
+            FlxG.camera.shake(0.02, 0.35);
+
+        }
+        else {
+            FlxG.camera.shake(0.01+0.005*v, 0.1+0.03*v);
         }
 
         _tDamage = TIMER_DAMAGE;
@@ -128,7 +144,10 @@ class Player extends FlxSprite {
      * 消滅
      **/
     public function vanish():Void {
+        s_emiiter.explode(x+width/2, y+height/2);
         kill();
+        s_emiiter = null;
+        s_text = null;
     }
 
     /**

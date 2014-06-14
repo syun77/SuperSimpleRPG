@@ -24,6 +24,11 @@ class PlayState extends FlxState {
     private var _player:Player;
     private var _enemys:FlxTypedGroup<Enemy>;
     private var _items:FlxTypedGroup<Item>;
+    private var _effecttext:FlxTypedGroup<EffectText>;
+
+    // エミッタ
+    private var _emitterEnemy:EmitterEnemy;
+    private var _emitterPlayer:EmitterPlayer;
 
     // テキスト
     private var _txHp:FlxText;
@@ -68,6 +73,21 @@ class PlayState extends FlxState {
 
         // オブジェクトを配置
         _level.loadObjects(this);
+
+        // テキストエフェクトグループ生成
+        _effecttext = new FlxTypedGroup<EffectText>(8);
+        for(i in 0..._effecttext.maxSize) {
+            _effecttext.add(new EffectText());
+        }
+        add(_effecttext);
+        Player.s_text = _effecttext;
+
+        // エミッタ生成
+        _emitterEnemy = new EmitterEnemy();
+        _emitterPlayer = new EmitterPlayer();
+        add(_emitterEnemy);
+        add(_emitterPlayer);
+        Player.s_emiiter = _emitterPlayer;
 
         // テキスト生成
         {
@@ -200,6 +220,7 @@ class PlayState extends FlxState {
 
         // 敵消滅
         enemy.vanish();
+        _emitterEnemy.explode(enemy.x+enemy.width/2, enemy.y+enemy.height/2);
     }
 
     /**
