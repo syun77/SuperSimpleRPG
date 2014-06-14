@@ -3,5 +3,5 @@ package;
 import flixel.util.FlxSave;
 
 class Reg {
-    public static var stage:Int = 0;
+    public static var stage:Int = 1;
 }

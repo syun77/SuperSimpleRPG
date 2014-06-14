@@ -73,7 +73,7 @@ class PlayState extends FlxState {
 
         // レベルデータ読み込み
         {
-            var stage = TextUtil.fillZero(Reg.stage+1, 3);
+            var stage = TextUtil.fillZero(Reg.stage, 3);
             var path = "assets/levels/" + stage + ".tmx";
             _level = new TiledLevel(path);
         }
@@ -122,7 +122,7 @@ class PlayState extends FlxState {
             var DY:Int = 12;
             // テキスト
             _txStage = new FlxText(X, py);
-            _txStage.text = "Stage: " + (Reg.stage + 1);
+            _txStage.text = "Stage: " + Reg.stage;
             py += DY;
             _txLevel = new FlxText(X, py);
             py += DY;
@@ -433,6 +433,18 @@ class PlayState extends FlxState {
         }
         else if(FlxG.keys.justPressed.D) {
             _player.damage(1);
+        }
+
+        if(FlxG.keys.justPressed.ONE) {
+            Reg.stage++;
+            _txStage.text = "Stage: " + Reg.stage;
+        }
+        if(FlxG.keys.justPressed.TWO) {
+            Reg.stage--;
+            _txStage.text = "Stage: " + Reg.stage;
+        }
+        if(FlxG.keys.justPressed.THREE) {
+            _player.damage(999);
         }
     }
 
