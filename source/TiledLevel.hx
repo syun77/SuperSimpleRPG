@@ -137,6 +137,9 @@ class TiledLevel extends TiledMap {
         }
 
         switch(o.gid) {
+            case 1:
+            state.createPlayer(px, py);
+
             case 2:
             state.addItem(Item.ID_BANANA, px, py);
 

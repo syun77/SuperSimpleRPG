@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="15" height="15" tilewidth="16" tileheight="16">
+ <properties>
+  <property name="hp" value="3"/>
+  <property name="lv" value="1"/>
+ </properties>
+ <tileset firstgid="1" name="chip" tilewidth="16" tileheight="16">
+  <image source="chip.png" width="256" height="256"/>
+ </tileset>
+ <layer name="Foreground" width="15" height="15">
+  <properties>
+   <property name="tileset" value="chip"/>
+  </properties>
+  <data encoding="csv">
+18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,
+18,0,0,17,0,0,0,17,0,0,17,0,0,0,18,
+18,0,0,17,0,17,0,0,17,0,17,0,0,0,18,
+18,0,0,0,0,17,0,0,17,0,17,0,0,0,18,
+18,0,17,17,17,17,17,0,17,0,17,17,0,17,18,
+18,0,0,17,0,17,0,0,0,0,0,17,0,17,18,
+18,0,0,0,0,17,0,17,17,17,17,17,0,17,18,
+18,17,17,17,0,17,0,0,0,0,0,0,0,17,18,
+18,0,0,0,0,17,17,17,17,17,0,17,17,17,18,
+18,0,0,17,17,0,0,17,0,0,0,0,0,0,18,
+18,0,0,0,0,0,0,17,0,17,17,17,17,0,18,
+18,17,17,17,0,17,0,17,0,0,0,0,17,0,18,
+18,0,0,17,0,17,0,17,0,17,17,0,17,0,18,
+18,0,0,0,0,0,0,17,0,0,17,0,0,17,18,
+18,18,18,18,18,18,18,18,18,18,18,18,18,18,18
+</data>
+ </layer>
+ <objectgroup color="#00ff00" name="object" width="15" height="15" opacity="0.49">
+  <object name="start" type="player_start" gid="1" x="192" y="48"/>
+  <object gid="27" x="32" y="208"/>
+  <object gid="66" x="176" y="128"/>
+  <object gid="66" x="128" y="192"/>
+  <object gid="66" x="64" y="64"/>
+  <object gid="2" x="208" y="192"/>
+  <object gid="6" x="144" y="224"/>
+  <object gid="65" x="112" y="128"/>
+  <object gid="65" x="112" y="64"/>
+  <object gid="65" x="48" y="112"/>
+  <object gid="65" x="80" y="176"/>
+  <object gid="2" x="112" y="96"/>
+  <object gid="2" x="96" y="112"/>
+  <object gid="65" x="176" y="192"/>
+  <object gid="2" x="96" y="48"/>
+  <object gid="66" x="32" y="144"/>
+  <object gid="66" x="16" y="160"/>
+  <object gid="66" x="32" y="176"/>
+  <object gid="66" x="64" y="192"/>
+  <object gid="2" x="16" y="144"/>
+ </objectgroup>
+</map>

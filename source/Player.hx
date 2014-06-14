@@ -145,6 +145,13 @@ class Player extends FlxSprite {
     }
 
     /**
+     * レベルを設定
+     **/
+    public function setLv(v:Int):Void {
+        _level = v;
+    }
+
+    /**
      * 消滅
      **/
     public function vanish():Void {
@@ -198,6 +205,9 @@ class Player extends FlxSprite {
 
         _level--;
         _hpmax--;
+        if(_hpmax < 1) {
+            _hpmax = 1;
+        }
         if(_hp > _hpmax) {
             _hp = _hpmax;
         }

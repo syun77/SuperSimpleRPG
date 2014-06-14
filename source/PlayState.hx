@@ -99,6 +99,16 @@ class PlayState extends FlxState {
         _level.loadObjects(this);
         // プレイヤーはこのタイミングでアタッチする
         add(_player);
+        // LVを設定
+        if(_level.properties.contains("lv")) {
+            var v = Std.parseInt(_level.properties.get("lv"));
+            _player.setLv(v);
+        }
+        // HPを設定
+        if(_level.properties.contains("hp")) {
+            var v = Std.parseInt(_level.properties.get("hp"));
+            _player.setHp(v);
+        }
 
         // テキストエフェクトグループ生成
         _effecttext = new FlxTypedGroup<EffectText>(8);
@@ -146,7 +156,6 @@ class PlayState extends FlxState {
 
 
         // デバッグ処理
-        _player.setHp(10);
 //        FlxG.debugger.drawDebug = true;
         FlxG.debugger.toggleKeys = ["ALT"];
     }
