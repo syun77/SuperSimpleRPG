@@ -143,6 +143,9 @@ class TiledLevel extends TiledMap {
             case 6:
             state.addItem(Item.ID_POWER, px, py);
 
+            case 23:
+            state.addIron(Iron.ID_NORMAL, px, py);
+
             case 27:
             state.addGoal(px, py);
         }

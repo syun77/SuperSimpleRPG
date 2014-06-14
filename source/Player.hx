@@ -34,6 +34,10 @@ private enum Direction {
  **/
 class Player extends FlxSprite {
 
+    // レベルの最大
+    private static inline var LEVEL_MIN = 1;
+    private static inline var LEVEL_MAX = 5;
+
     // アニメーション定数
     private static inline var ANIM_STANDBY = "standby"; // 待機
     private static inline var ANIM_WALK = "walk"; // 歩く
@@ -165,12 +169,37 @@ class Player extends FlxSprite {
         _reqStop = true;
     }
 
+    // レベルが最大
+    public function isLevelMax():Bool return _level >= LEVEL_MAX;
     /**
      * レベルアップする
      **/
     public function levelUp():Void {
+        if(isLevelMax()) {
+            // レベルが最大なのでレベルアップできない
+            return;
+        }
+
         _level++;
         _hpmax++;
+    }
+
+    // レベルが最低
+    public function isLevelMin():Bool return _level <= LEVEL_MIN;
+    /**
+     * レベルダウンする
+     **/
+    public function levelDown():Void {
+        if(isLevelMin()) {
+            // レベルが最低なのでレベルダウンできない
+            return;
+        }
+
+        _level--;
+        _hpmax--;
+        if(_hp > _hpmax) {
+            _hp = _hpmax;
+        }
     }
 
     /**

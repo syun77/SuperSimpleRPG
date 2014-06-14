@@ -41,6 +41,7 @@ class PlayState extends FlxState {
     private var _enemys:FlxTypedGroup<Enemy>;
     private var _items:FlxTypedGroup<Item>;
     private var _effecttext:FlxTypedGroup<EffectText>;
+    private var _irons:FlxTypedGroup<Iron>;
 
     // エミッタ
     private var _emitterEnemy:EmitterEnemy;
@@ -90,6 +91,10 @@ class PlayState extends FlxState {
         // アイテムグループ生成
         _items = new FlxTypedGroup<Item>();
         add(_items);
+
+        // 鉄球グループ生成
+        _irons = new FlxTypedGroup<Iron>();
+        add(_irons);
 
         // オブジェクトを配置
         _level.loadObjects(this);
@@ -189,6 +194,14 @@ class PlayState extends FlxState {
     public function addGoal(px:Int, py:Int):Void {
         _goal = new Goal(px, py);
         add(_goal);
+    }
+
+    /**
+     * 鉄球の生成
+     **/
+    public function addIron(id:Int, px:Int, py:Int):Void {
+        var i:Iron = new Iron(id, px, py);
+        _irons.add(i);
     }
 
     /**
