@@ -3,7 +3,6 @@ package;
 import EffectText;
 import flixel.FlxObject;
 import flixel.FlxSprite;
-import flixel.ui.FlxBar;
 import flixel.text.FlxText;
 import flixel.group.FlxTypedGroup;
 import flixel.util.FlxColor;
@@ -42,6 +41,7 @@ class PlayState extends FlxState {
     private var _items:FlxTypedGroup<Item>;
     private var _effecttext:FlxTypedGroup<EffectText>;
     private var _irons:FlxTypedGroup<Iron>;
+    private var _locks:FlxTypedGroup<Lock>;
 
     // エミッタ
     private var _emitterEnemy:EmitterEnemy;
@@ -62,6 +62,8 @@ class PlayState extends FlxState {
     private var _timer:Int = 0;
 
     override public function create():Void {
+
+        Reg.stage = 6;
 
         // 背景色設定
         bgColor = FlxColor.SILVER;
@@ -94,6 +96,10 @@ class PlayState extends FlxState {
         // 鉄球グループ生成
         _irons = new FlxTypedGroup<Iron>();
         add(_irons);
+
+        // 錠グループ作成
+        _locks = new FlxTypedGroup<Lock>();
+        add(_locks);
 
         // オブジェクトを配置
         _level.loadObjects(this);
@@ -197,6 +203,14 @@ class PlayState extends FlxState {
     public function addGoal(px:Int, py:Int):Void {
         _goal = new Goal(px, py);
         add(_goal);
+    }
+
+    /**
+     * 錠の生成
+     **/
+    public function addLock(px:Int, py:Int):Void {
+        var l:Lock = _locks.recycle(Lock);
+        l.init(px, py);
     }
 
     /**

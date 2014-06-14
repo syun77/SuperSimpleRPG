@@ -143,11 +143,17 @@ class TiledLevel extends TiledMap {
             case 2:
             state.addItem(Item.ID_BANANA, px, py);
 
+            case 3:
+            state.addItem(Item.ID_KEY, px, py);
+
             case 4:
             state.addItem(Item.ID_HEART, px, py);
 
             case 6:
             state.addItem(Item.ID_POWER, px, py);
+
+            case 20:
+            state.addLock(px, py);
 
             case 23:
             state.addIron(Iron.ID_NORMAL, px, py);
