@@ -54,10 +54,7 @@ class PlayState extends FlxState {
     private var _txSubMessage:FlxText;
 
     // バー
-    private var _barHp:FlxBar;
-    private var _hpPrev:Float;
-    private var _hpNext:Float;
-    private var _hpTimer:Float;
+    private var _barHp:StatusBar;
 
     // ゲーム制御
     private var _state:State = State.Init;
@@ -130,7 +127,7 @@ class PlayState extends FlxState {
             py += DY;
             _txHp = new FlxText(X, py);
             // HPバー
-            _barHp = new FlxBar(X, py+DY, FlxBar.FILL_LEFT_TO_RIGHT, 80-8*2, 4);
+            _barHp = new StatusBar(X, py+DY, 80-8*2, 4);
             add(_barHp);
 
             add(_txStage);
@@ -138,11 +135,6 @@ class PlayState extends FlxState {
             add(_txLevel);
 
         }
-
-        // HPバー
-        _hpPrev = _player.getHpRatio();
-        _hpNext = _player.getHpRatio();
-        _hpTimer = 0;
 
         // ゲーム制御変数の初期化
         _state = State.Init;
@@ -153,9 +145,6 @@ class PlayState extends FlxState {
         _player.setHp(10);
 //        FlxG.debugger.drawDebug = true;
         FlxG.debugger.toggleKeys = ["ALT"];
-        FlxG.watch.add(this, "_hpPrev");
-        FlxG.watch.add(this, "_hpNext");
-        FlxG.watch.add(this, "_hpTimer");
     }
 
     /**
@@ -425,34 +414,7 @@ class PlayState extends FlxState {
         }
 
         // HPバー更新
-        var now = _player.getHpRatio();
-        if(now != _hpPrev ||(now == _hpPrev && now != _hpNext)) {
-
-            if(_hpTimer == 0 || now != _hpNext) {
-                // バー減少演出開始
-                _hpPrev = _hpNext;
-                _hpTimer = TIMER_HP_BAR;
-                _hpNext = _player.getHpRatio();
-            }
-            else {
-                // バー減少演出中
-                _hpTimer *= 0.9;
-                if(_hpTimer <= 1) {
-                    _hpPrev = _player.getHpRatio();
-                    _hpTimer = 0;
-                }
-
-            }
-            // 演出中
-            var d = now - _hpPrev;
-            var d2 = d * (TIMER_HP_BAR - _hpTimer) / TIMER_HP_BAR;
-            var val = _hpPrev + d2;
-            _barHp.percent = val * 100;
-        }
-        else {
-            // 普通に更新
-            _barHp.percent = _player.getHpRatio()*100;
-        }
+        _barHp.setPercent(_player.getHpRatio()*100);
     }
 
     private function _updateDebug():Void {
