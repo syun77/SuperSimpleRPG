@@ -23,6 +23,7 @@ class PlayState extends FlxState {
     // ゲームオブジェクト
     private var _player:Player;
     private var _enemys:FlxTypedGroup<Enemy>;
+    private var _items:FlxTypedGroup<Item>;
 
     // テキスト
     private var _txHp:FlxText;
@@ -60,6 +61,10 @@ class PlayState extends FlxState {
         // 敵グループ生成
         _enemys = new FlxTypedGroup<Enemy>();
         add(_enemys);
+
+        // アイテムグループ生成
+        _items = new FlxTypedGroup<Item>();
+        add(_items);
 
         // オブジェクトを配置
         _level.loadObjects(this);
@@ -122,6 +127,14 @@ class PlayState extends FlxState {
     public function addEnemy(id:Int, px:Int, py:Int):Void {
         var e:Enemy = _enemys.recycle(Enemy);
         e.init(id, px, py);
+    }
+
+    /**
+     * アイテムの生成
+     **/
+    public function addItem(id:Int, px:Int, py:Int):Void {
+        var i:Item = _items.recycle(Item);
+        i.init(id, px, py);
     }
 
     /**

@@ -135,6 +135,14 @@ class TiledLevel extends TiledMap {
             var id = (o.gid - 65) + 1;
             state.addEnemy(id, px, py);
         }
+
+        switch(o.gid) {
+            case 4:
+            state.addItem(Item.ID_HEART, px, py);
+
+            case 6:
+            state.addItem(Item.ID_POWER, px, py);
+        }
     }
 
     /**
