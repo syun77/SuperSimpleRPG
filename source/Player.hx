@@ -257,6 +257,37 @@ class Player extends FlxSprite {
             case State.Miss:
         }
     }
+
+    private function _getNextPosition(dir:Direction):FlxPoint {
+        var p = FlxPoint.get();
+        p.set(x, y);
+        switch(dir) {
+            case Direction.Left:  p.x -= TILE_SIZE;
+            case Direction.Up:    p.y -= TILE_SIZE;
+            case Direction.Right: p.x += TILE_SIZE;
+            case Direction.Down:  p.y += TILE_SIZE;
+            default:
+        }
+
+        return p;
+    }
+
+    /**
+     * 指定の方向に移動できるかどうか
+     * @param dir 方向
+     * @return 移動できればtrue
+     **/
+    private function _canMove(dir:Direction):Bool {
+        var p = _getNextPosition(_direction);
+        if(_getPlayState().canMove(p.x, p.y)) {
+            // 移動できる
+            return true;
+        }
+
+        // 移動できない
+        return false;
+    }
+
     /**
      * 更新・待機状態
      **/
@@ -295,8 +326,16 @@ class Player extends FlxSprite {
             animation.play(ANIM_WALK);
             // 停止要求クリア
             _reqStop = false;
-            // 移動前の座標を覚えておく
-            setPrev(x, y);
+
+            if(_canMove(_direction)) {
+                // 移動できる
+                // 移動前の座標を覚えておく
+                setPrev(x, y);
+            }
+            else {
+                // 移動できない
+                _state = State.Standby;
+            }
         }
         else {
             animation.play(ANIM_STANDBY);
@@ -321,7 +360,7 @@ class Player extends FlxSprite {
                 velocity.x = -WALK_SPEED;
                 if(x <= _prevX-TILE_SIZE) {
                     x = _prevX-TILE_SIZE;
-                    if(_isOnLeft()) {
+                    if(_isOnLeft() && _canMove(_direction)) {
                         _prevX -= TILE_SIZE;
                     }
                     else {
@@ -333,7 +372,7 @@ class Player extends FlxSprite {
                 velocity.y = -WALK_SPEED;
                 if(y <= _prevY-TILE_SIZE) {
                     y = _prevY-TILE_SIZE;
-                    if(_isOnUp()) {
+                    if(_isOnUp() && _canMove(_direction)) {
                         _prevY -= TILE_SIZE;
                     }
                     else {
@@ -345,7 +384,7 @@ class Player extends FlxSprite {
                 velocity.x = WALK_SPEED;
                 if(x >= _prevX+TILE_SIZE) {
                     x = _prevX+TILE_SIZE;
-                    if(_isOnRight()) {
+                    if(_isOnRight() && _canMove(_direction)) {
                         _prevX += TILE_SIZE;
                     }
                     else {
@@ -357,7 +396,7 @@ class Player extends FlxSprite {
                 velocity.y = WALK_SPEED;
                 if(y >= _prevY+TILE_SIZE) {
                     y = _prevY+TILE_SIZE;
-                    if(_isOnDown()) {
+                    if(_isOnDown() && _canMove(_direction)) {
                         _prevY += TILE_SIZE;
                     }
                     else {
@@ -375,6 +414,10 @@ class Player extends FlxSprite {
             y = TILE_SIZE * Math.floor(y/TILE_SIZE);
             _state = State.Standby;
         }
+    }
+
+    private function _getPlayState():PlayState {
+        return cast FlxG.state;
     }
 
 

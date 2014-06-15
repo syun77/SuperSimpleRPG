@@ -228,6 +228,25 @@ class PlayState extends FlxState {
     }
 
     /**
+     * 指定の座標に移動できるかどうか
+     * @param px X座標
+     * @param py Y座標
+     * @return 移動できればtrue
+     **/
+    public function canMove(px:Float, py:Float):Bool {
+        var ret:Bool = true;
+        var check = function(o:FlxObject) {
+            if(px == o.x && py == o.y) {
+                ret = false;
+            }
+        }
+
+        _locks.forEachAlive(check);
+
+        return ret;
+    }
+
+    /**
      * 更新
      **/
     override public function update():Void {
