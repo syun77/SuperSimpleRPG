@@ -154,7 +154,7 @@ class PlayState extends FlxState {
             var DY:Int = 12;
             // テキスト
             _txStage = new FlxText(X, py);
-            _txStage.text = "Stage: " + Reg.stage;
+            _txStage.text = "Stage: " + Reg.stage + "/" + Reg.STAGE_MAX;
             py += DY;
             _txLevel = new FlxText(X, py);
             py += DY;
@@ -603,11 +603,11 @@ class PlayState extends FlxState {
 
         if(FlxG.keys.justPressed.ONE) {
             Reg.stage++;
-            _txStage.text = "Stage: " + Reg.stage;
+            _txStage.text = "Stage: " + Reg.stage + "/" + Reg.STAGE_MAX;
         }
         if(FlxG.keys.justPressed.TWO) {
             Reg.stage--;
-            _txStage.text = "Stage: " + Reg.stage;
+            _txStage.text = "Stage: " + Reg.stage + "/" + Reg.STAGE_MAX;
         }
         if(FlxG.keys.justPressed.THREE) {
             _player.damage(999);
