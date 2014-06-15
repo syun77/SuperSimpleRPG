@@ -29,6 +29,7 @@ class MenuState extends FlxState {
 
         // セーブデータをロード
         Reg.load();
+        Reg.stage = Reg.stageMax;
 
         _txTitle = new FlxText(0, 80, FlxG.width, 16);
         _txTitle.alignment = "center";
