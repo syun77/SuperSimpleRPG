@@ -34,6 +34,9 @@ class PlayState extends FlxState {
     // レベルデータ
     private var _level:TiledLevel;
 
+    // リトライメニュー
+    private var _menuRetry:MenuRetry;
+
     // ゲームオブジェクト
     private var _player:Player;
     private var _goal:Goal;
@@ -161,6 +164,11 @@ class PlayState extends FlxState {
             add(_txKey);
 
         }
+
+        // リトライメニュー
+        _menuRetry = new MenuRetry();
+        _menuRetry.kill();
+        add(_menuRetry);
 
         // ゲーム制御変数の初期化
         _state = State.Init;
@@ -326,6 +334,18 @@ class PlayState extends FlxState {
      * 更新・メイン
      **/
     private function _updateMain():Void {
+
+        if(FlxG.keys.anyJustPressed(["SHIFT", "X"])) {
+            _player.active = false;
+            _menuRetry.revive();
+        }
+
+        if(_player.active == false) {
+            if(_menuRetry.alive == false) {
+                _player.active = true;
+            }
+            return;
+        }
 
         // カベとの衝突判定
         if(_level.collideWithLevel(_player)) {
