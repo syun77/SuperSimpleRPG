@@ -1,5 +1,7 @@
 package;
 
+import flixel.tweens.FlxEase;
+import flixel.tweens.FlxTween;
 import EffectText;
 import flixel.FlxObject;
 import flixel.FlxSprite;
@@ -57,6 +59,7 @@ class PlayState extends FlxState {
     private var _txStage:FlxText;
     private var _txKey:FlxText;
     private var _txSubMessage:FlxText;
+    private var _txStart:FlxText;
 
     // バー
     private var _barLv:StatusBar;
@@ -165,6 +168,14 @@ class PlayState extends FlxState {
             add(_txKey);
 
         }
+        _txStart = new FlxText(-100, FlxG.height/2-8, FlxG.width, 16);
+        _txStart.alignment = "center";
+        _txStart.visible = false;
+        _txStart.borderStyle = FlxText.BORDER_OUTLINE_FAST;
+        _txStart.borderColor = FlxColor.BLACK;
+        add(_txStart);
+        FlxG.watch.add(_txStart, "x");
+        FlxG.watch.add(_txStart, "y");
 
         // リトライメニュー
         _menuRetry = new MenuRetry();
@@ -339,6 +350,15 @@ class PlayState extends FlxState {
      **/
     private function _updateInit():Void {
 
+        _txStart.visible = true;
+        _txStart.x = -200;
+        _txStart.text = "Stage: " + Reg.stage;
+        var cbEnd = function(tween:FlxTween):Void {
+            trace("FlxTween.expoIn.");
+            FlxTween.tween(_txStart, {x:FlxG.width}, 1, { ease:FlxEase.expoIn});
+        }
+        FlxTween.tween(_txStart, {x:0}, 1, { ease: FlxEase.expoOut, complete:cbEnd});
+        trace("FlxTween.expoOut.");
         _state = State.Main;
     }
 
