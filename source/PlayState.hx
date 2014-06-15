@@ -327,9 +327,10 @@ class PlayState extends FlxState {
 
             case State.StageclearMain:
             if(_isPressDecide()) {
-                Reg.stage++;
-                if(false) {
-                    // TODO: 全ステージクリア判定
+                Reg.nextStage();
+                if(Reg.isClearAllStage()) {
+                    // 全ステージクリア
+                    // TODO: 全ステージクリアの処理
                 }
                 else {
                     // 次のステージを開始する
