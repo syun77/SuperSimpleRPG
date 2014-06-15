@@ -1,5 +1,6 @@
 package;
 
+import flixel.util.FlxColor;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.FlxState;
@@ -32,7 +33,7 @@ class MenuState extends FlxState {
         _txTitle = new FlxText(0, 80, FlxG.width, 16);
         _txTitle.alignment = "center";
         _txTitle.text = "Super Simple RPG";
-        _txPresskey = new FlxText(0, FlxG.height/2+16, FlxG.width, 8);
+        _txPresskey = new FlxText(0, FlxG.height/2+48, FlxG.width, 8);
         _txPresskey.alignment = "center";
         _txPresskey.text = "Start to press Z or Space";
         _txCopyright = new FlxText(0, FlxG.height-32, FlxG.width, 6);
@@ -46,7 +47,9 @@ class MenuState extends FlxState {
         if(_max > 1) {
             // ステージ2以上をクリアしている
             _bSelect = true; // ステージセレクト可能
-            _txSelect = new FlxText(0, FlxG.height/2+32, FlxG.width, 8);
+            _txSelect = new FlxText(0, FlxG.height/2+16, FlxG.width, 8);
+            _txSelect.alignment = "center";
+            _txSelect.color = FlxColor.YELLOW;
             add(_txSelect);
         }
         else {
@@ -68,7 +71,7 @@ class MenuState extends FlxState {
         super.update();
 
         if(_bSelect) {
-            _txSelect.text = "< " + Reg.stage + "/" + Reg.stageMax + " >";
+            _txSelect.text = "SELECT STAGE < " + Reg.stage + "/" + Reg.stageMax + " >";
             if(FlxG.keys.justPressed.LEFT) {
                 Reg.stage--;
                 if(Reg.stage <= 0) {
