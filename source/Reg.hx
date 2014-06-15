@@ -3,6 +3,9 @@ package;
 import flixel.util.FlxSave;
 
 class Reg {
+    // ステージ最大数
+    public static inline var STAGE_MAX = 10;
+
     // 現在のステージ番号
     public static var stage:Int = 1;
     // 最大のステージ番号
@@ -44,6 +47,13 @@ class Reg {
     }
 
     /**
+     * ステージ数を初期化
+     **/
+    public static function resetStage():Void {
+        stage = 1;
+    }
+
+    /**
      * 次のステージへ進む
      **/
     public static function nextStage():Void {
@@ -59,6 +69,10 @@ class Reg {
      * @return 全ステージクリアしていたらtrue
      **/
     public static function isClearAllStage():Bool {
+        if(stage > STAGE_MAX) {
+            return true;
+        }
+
         return false;
     }
 }

@@ -57,6 +57,8 @@ class MenuState extends FlxState {
         _txPresskey.visible = (_timer%80 < 60);
 
         if(FlxG.keys.anyJustPressed(["Z", "SPACE"])) {
+            // ステージ数を初期化
+            Reg.resetStage();
             FlxG.switchState(new PlayState());
         }
     }

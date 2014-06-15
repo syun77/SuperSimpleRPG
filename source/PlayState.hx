@@ -176,7 +176,7 @@ class PlayState extends FlxState {
             add(_txKey);
 
         }
-        _txStart = new FlxText(-100, FlxG.height/2-8, FlxG.width, 16);
+        _txStart = new FlxText(-100, FlxG.height/2-8, FlxG.width*3/4, 16);
         _txStart.alignment = "center";
         _txStart.visible = false;
         _txStart.borderStyle = FlxText.BORDER_OUTLINE_FAST;
@@ -366,7 +366,7 @@ class PlayState extends FlxState {
                 Reg.nextStage();
                 if(Reg.isClearAllStage()) {
                     // 全ステージクリア
-                    // TODO: 全ステージクリアの処理
+                    FlxG.switchState(new EndingState());
                 }
                 else {
                     // 次のステージを開始する
