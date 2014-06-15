@@ -15,8 +15,28 @@ class Enemy extends FlxSprite {
     public static inline var ID_SNAKE = 4; // ヘビ
     public static inline var ID_DOKURO = 5; // ドクロ
 
+    public static inline var ID_START = ID_SLIME;
+    public static inline var ID_END = ID_DOKURO+1;
+
     private var _id:Int = ID_SLIME;
     private var _timer:Int;
+
+    /**
+     * アセットのパスを取得する
+     * @param id 敵ID
+     * @return アセットのパス
+     **/
+    static public function getAssetPath(id:Int):String {
+        switch(id) {
+            case ID_SLIME: return "assets/images/slime.png";
+            case ID_BAT:   return "assets/images/bat.png";
+            case ID_GOAST: return "assets/images/goast.png";
+            case ID_SNAKE: return "assets/images/snake.png";
+            case ID_DOKURO: return "assets/images/dokuro.png";
+        }
+
+        return "";
+    }
 
     /**
      * コンストラクタ
@@ -37,7 +57,7 @@ class Enemy extends FlxSprite {
      * レベルを取得する
      * @return レベル
      **/
-    public function getLevel():Int return _id;
+    public function getLevel():Int { return _id; }
 
     /**
      * 初期化
@@ -54,14 +74,8 @@ class Enemy extends FlxSprite {
      * 画像ファイルの読み込み
      **/
     private function _loadAsset(id:Int):Void {
-        switch(id) {
-            case ID_SLIME: loadGraphic("assets/images/slime.png");
-            case ID_BAT: loadGraphic("assets/images/bat.png");
-            case ID_GOAST: loadGraphic("assets/images/goast.png");
-            case ID_SNAKE: loadGraphic("assets/images/snake.png");
-            case ID_DOKURO: loadGraphic("assets/images/dokuro.png");
-        }
-
+        var path = Enemy.getAssetPath(id);
+        loadGraphic(path);
     }
 
     /**

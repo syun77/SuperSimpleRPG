@@ -73,8 +73,6 @@ class PlayState extends FlxState {
 
     override public function create():Void {
 
-        Reg.stage = 6;
-
         // 背景色設定
         bgColor = FlxColor.SILVER;
 
@@ -184,6 +182,7 @@ class PlayState extends FlxState {
         // リトライメニュー
         _menuRetry = new MenuRetry();
         add(_menuRetry);
+        _menuRetry.addChild();
 
         // ゲーム制御変数の初期化
         _state = State.Init;
@@ -290,6 +289,32 @@ class PlayState extends FlxState {
     }
 
     /**
+     * 指定のIDの敵の生存数を返します
+     * @param 敵ID（Enemy.ID_*）
+     * @return 存在する敵の数
+     **/
+    public function getEnemyCount(eid:Int):Int {
+        var ret:Int = 0;
+        var check = function(e:Enemy) {
+            if(e.getLevel() == eid) {
+                ret++;
+            }
+        }
+
+        _enemys.forEachAlive(check);
+
+        return ret;
+    }
+
+    /**
+     * プレイヤーのレベルを取得する
+     * @return プレイヤーのレベル
+     **/
+    public function getPlayerLevel():Int {
+        return _player.getKey();
+    }
+
+    /**
      * 更新
      **/
     override public function update():Void {
@@ -354,6 +379,7 @@ class PlayState extends FlxState {
      **/
     private function _updateInit():Void {
 
+        // 開始演出
         _txStart.visible = true;
         _txStart.x = -200;
         _txStart.text = "Stage: " + Reg.stage;
@@ -361,6 +387,8 @@ class PlayState extends FlxState {
             FlxTween.tween(_txStart, {x:FlxG.width}, 1, { ease:FlxEase.expoIn});
         }
         FlxTween.tween(_txStart, {x:0}, 1, { ease: FlxEase.expoOut, complete:cbEnd});
+
+        // メイン状態へ
         _state = State.Main;
     }
 
