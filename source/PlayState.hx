@@ -55,6 +55,9 @@ class PlayState extends FlxState {
     private var _emitterEnemy:EmitterEnemy;
     private var _emitterPlayer:EmitterPlayer;
 
+    // エフェクト
+    private var _effectLocks:FlxTypedGroup<ParticleLock>;
+
     // テキスト
     private var _txHp:FlxText;
     private var _txLevel:FlxText;
@@ -138,6 +141,11 @@ class PlayState extends FlxState {
         add(_emitterEnemy);
         add(_emitterPlayer);
         Player.s_emiiter = _emitterPlayer;
+
+        // エフェクト生成
+        _effectLocks = new FlxTypedGroup<ParticleLock>();
+        add(_effectLocks);
+        Lock.s_effects = _effectLocks;
 
         // テキスト生成
         {
