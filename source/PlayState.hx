@@ -39,6 +39,8 @@ class PlayState extends FlxState {
 
     // リトライメニュー
     private var _menuRetry:MenuRetry;
+    // 敵情報
+    private var _menuEnemy:MenuEnemy;
 
     // ゲームオブジェクト
     private var _player:Player;
@@ -174,13 +176,14 @@ class PlayState extends FlxState {
         _txStart.borderStyle = FlxText.BORDER_OUTLINE_FAST;
         _txStart.borderColor = FlxColor.BLACK;
         add(_txStart);
-        FlxG.watch.add(_txStart, "x");
-        FlxG.watch.add(_txStart, "y");
+
+        // 敵情報
+        _menuEnemy = new MenuEnemy();
+        add(_menuEnemy);
 
         // リトライメニュー
         _menuRetry = new MenuRetry();
         add(_menuRetry);
-        _menuRetry.addChild();
 
         // ゲーム制御変数の初期化
         _state = State.Init;
@@ -355,11 +358,9 @@ class PlayState extends FlxState {
         _txStart.x = -200;
         _txStart.text = "Stage: " + Reg.stage;
         var cbEnd = function(tween:FlxTween):Void {
-            trace("FlxTween.expoIn.");
             FlxTween.tween(_txStart, {x:FlxG.width}, 1, { ease:FlxEase.expoIn});
         }
         FlxTween.tween(_txStart, {x:0}, 1, { ease: FlxEase.expoOut, complete:cbEnd});
-        trace("FlxTween.expoOut.");
         _state = State.Main;
     }
 
