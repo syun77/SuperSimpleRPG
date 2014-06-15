@@ -15,6 +15,7 @@ import flixel.FlxState;
 private enum State {
     Init; // 初期化
     Main; // メイン
+    RetryMenu; // リトライメニュー
     StageclearInit; // ステージクリア・初期化
     StageclearMain; // ステージクリア・メイン
     GameoverInit; // ゲームオーバー・初期化
@@ -167,8 +168,8 @@ class PlayState extends FlxState {
 
         // リトライメニュー
         _menuRetry = new MenuRetry();
-        _menuRetry.kill();
         add(_menuRetry);
+        _menuRetry.addChild();
 
         // ゲーム制御変数の初期化
         _state = State.Init;
@@ -283,6 +284,17 @@ class PlayState extends FlxState {
         switch(_state) {
             case State.Init: _updateInit();
             case State.Main: _updateMain();
+            case State.RetryMenu:
+            if(_menuRetry.alive == false) {
+                // メニューを閉じた
+                _player.active = true;
+                _state = State.Main;
+                if(_menuRetry.isRetry()) {
+                    // リトライする場合は殺す
+                    _player.damage(765);
+                }
+            }
+
             case State.GameoverInit:
             _timer--;
             if(_timer < 1) {
@@ -336,14 +348,10 @@ class PlayState extends FlxState {
     private function _updateMain():Void {
 
         if(FlxG.keys.anyJustPressed(["SHIFT", "X"])) {
+            // リトライメニュー表示
             _player.active = false;
-            _menuRetry.revive();
-        }
-
-        if(_player.active == false) {
-            if(_menuRetry.alive == false) {
-                _player.active = true;
-            }
+            _menuRetry.appear();
+            _state = State.RetryMenu;
             return;
         }
 
@@ -391,7 +399,7 @@ class PlayState extends FlxState {
         rect.makeGraphic(FlxG.width, h*2, FlxColor.BLACK);
         rect.alpha = 0.5;
         add(rect);
-        var text:FlxText = new FlxText(0, FlxG.height/2 - h/2-8, FlxG.width*2/3);
+        var text:FlxText = new FlxText(0, FlxG.height/2 - h/2-8, FlxG.width/4*3);
         text.alignment = "center";
         text.text = message;
         text.size = 16;
@@ -403,7 +411,7 @@ class PlayState extends FlxState {
      **/
     private function _displaySubMessage(message:String):Void {
 
-        var text:FlxText = new FlxText(0, FlxG.height/2 + 8, FlxG.width*2/3);
+        var text:FlxText = new FlxText(0, FlxG.height/2 + 8, FlxG.width/4*3);
         text.alignment = "center";
         text.text = message;
         add(text);
