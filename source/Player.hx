@@ -279,6 +279,15 @@ class Player extends FlxSprite {
      **/
     private function _canMove(dir:Direction):Bool {
         var p = _getNextPosition(_direction);
+
+        if(getKey() > 0) {
+            // カギがあればカギを使ってみる
+            if(_getPlayState().useKey(p.x, p.y)) {
+                // カギを使った
+                subKey();
+            }
+        }
+
         if(_getPlayState().canMove(p.x, p.y)) {
             // 移動できる
             return true;

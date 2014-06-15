@@ -247,6 +247,26 @@ class PlayState extends FlxState {
     }
 
     /**
+     * 指定の座標にロックがあればカギを使って壊す
+     * @param px X座標
+     * @param py Y座標
+     * @return ロックを壊したらtrue
+     **/
+    public function useKey(px:Float, py:Float):Bool {
+        var ret:Bool = false;
+        var check = function(o:Lock) {
+            if(px == o.x && py == o.y) {
+                o.vanish();
+                ret = true;
+            }
+        }
+
+        _locks.forEachAlive(check);
+
+        return ret;
+    }
+
+    /**
      * 更新
      **/
     override public function update():Void {

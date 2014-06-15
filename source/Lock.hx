@@ -15,8 +15,15 @@ class Lock extends FlxSprite {
     /**
      * 生成
      **/
-    public function init(px:Float, py:Float) {
+    public function init(px:Float, py:Float):Void {
         x = px;
         y = py;
+    }
+
+    /**
+     * 消滅する
+     **/
+    public function vanish():Void {
+        kill();
     }
 }
