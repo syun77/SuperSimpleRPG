@@ -596,6 +596,10 @@ class PlayState extends FlxState {
         else if(FlxG.keys.justPressed.D) {
             _player.damage(1);
         }
+        if(FlxG.keys.justPressed.E) {
+            // セーブデータ初期化
+            Reg.clear();
+        }
 
         if(FlxG.keys.justPressed.ONE) {
             Reg.stage++;

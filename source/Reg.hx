@@ -44,6 +44,24 @@ class Reg {
         _save.bind("SAVEDATA");
 
         _save.data.stageMax = stageMax;
+
+        // 書き込み
+        _save.flush();
+    }
+
+    /**
+     * セーブデータを初期化する
+     **/
+    public static function clear():Void {
+
+        if(_save == null) {
+            _save = new FlxSave();
+        }
+
+        // バインド
+        _save.bind("SAVEDATA");
+
+        _save.erase();
     }
 
     /**
@@ -58,6 +76,10 @@ class Reg {
      **/
     public static function nextStage():Void {
         stage++;
+        if(stage > STAGE_MAX) {
+            stage = STAGE_MAX;
+        }
+
         if(stage > stageMax) {
             stageMax = stage;
             save();
