@@ -40,5 +40,7 @@
   <object gid="20" x="160" y="112"/>
   <object gid="20" x="176" y="176"/>
   <object gid="20" x="176" y="112"/>
+  <object gid="68" x="112" y="64"/>
+  <object gid="69" x="160" y="64"/>
  </objectgroup>
 </map>

@@ -12,6 +12,8 @@ import flixel.FlxObject;
  **/
 class MenuEnemy extends FlxObject {
 
+    private var POS_X = FlxG.width*3/4 + 8;
+    private var POS_Y = 72;
     private var _group:FlxSpriteGroup;
     private var _texts:Map<Int, FlxText>;
 
@@ -20,8 +22,8 @@ class MenuEnemy extends FlxObject {
         _group = new FlxSpriteGroup();
         _texts = new Map<Int, FlxText>();
 
-        var x = FlxG.width*3/4 + 8;
-        var y = 64;
+        var x = POS_X;
+        var y = POS_Y;
         var dy = 12;
         for(id in Enemy.ID_START...Enemy.ID_END) {
 
@@ -44,18 +46,27 @@ class MenuEnemy extends FlxObject {
         FlxG.state.add(_group);
     }
 
+    /**
+     * 敵情報テキストを更新
+     * @param text テキストオブジェクト
+     * @param id   敵ID
+     **/
     public function _updateText(text:FlxText, id:Int):Void {
         var lv:Int = cast(FlxG.state, PlayState).getPlayerLevel();
-        var damage = lv - id + 1;
+        var damage = id - lv + 1;
         if(damage < 0) {
             damage = 0;
         }
-        text.text = "Lv:" + id + " -> " + damage + "D";
+        text.text = "Lv:" + id + " -> " + damage + "d";
     }
 
     override function update():Void {
         super.update();
 
+        for(id in _texts.keys()) {
+            var tx = _texts.get(id);
+            _updateText(tx, id);
+        }
 
     }
 }

@@ -311,7 +311,7 @@ class PlayState extends FlxState {
      * @return プレイヤーのレベル
      **/
     public function getPlayerLevel():Int {
-        return _player.getKey();
+        return _player.getLevel();
     }
 
     /**
