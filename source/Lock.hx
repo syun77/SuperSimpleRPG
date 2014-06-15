@@ -12,7 +12,6 @@ class Lock extends FlxSprite {
     public function new() {
         super(-100, -100);
         loadGraphic("assets/images/lock.png");
-        kill();
     }
 
     /**
