@@ -117,7 +117,7 @@ class PlayState extends FlxState {
         // プレイヤーはこのタイミングでアタッチする
         add(_player);
         add(_player.getTextHp());
-        
+
         // LVを設定
         if(_level.properties.contains("lv")) {
             var v = Std.parseInt(_level.properties.get("lv"));
