@@ -1,5 +1,6 @@
 package ;
 
+import flixel.text.FlxText;
 import EffectText.EffectTextMode;
 import flixel.group.FlxTypedGroup;
 import haxe.web.Dispatch.MatchRule;
@@ -52,6 +53,9 @@ class Player extends FlxSprite {
     public static var s_emiiter:EmitterPlayer = null;
     public static var s_text:FlxTypedGroup<EffectText> = null;
 
+    // HP表示
+    private var _txHp:FlxText; // HP表示
+
     // 変数
     private var _state:State; // 状態
     private var _direction:Direction; // 向き
@@ -97,10 +101,15 @@ class Player extends FlxSprite {
         // ダメージタイマー初期化
         _tDamage = 0;
 
+        _txHp = new FlxText(-100, -100, TILE_SIZE*3);
+        _txHp.borderStyle = FlxText.BORDER_OUTLINE_FAST;
+        _txHp.alignment = "center";
+
         FlxG.watch.add(this, "x");
         FlxG.watch.add(this, "y");
     }
 
+    public function getTextHp():FlxText { return _txHp; }
     // HP取得
     public function getHp():Int { return _hp; }
     // 最大HP取得
@@ -169,6 +178,7 @@ class Player extends FlxSprite {
     public function vanish():Void {
         s_emiiter.explode(x+width/2, y+height/2);
         kill();
+        _txHp.visible = false;
         s_emiiter = null;
         s_text = null;
     }
@@ -255,6 +265,17 @@ class Player extends FlxSprite {
             _updateWalk();
 
             case State.Miss:
+        }
+
+        // HP更新
+        if(_hp != _hpmax) {
+            _txHp.x = x-TILE_SIZE;
+            _txHp.y = y+TILE_SIZE/2;
+            _txHp.text = _hp + "/" + _hpmax;
+            _txHp.visible = true;
+        }
+        else {
+            _txHp.visible = false;
         }
     }
 
