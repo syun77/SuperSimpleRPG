@@ -13,6 +13,8 @@ class Reg {
     // セーブデータ
     private static var _save:FlxSave = null;
 
+    public static var lastPlayMusic:String = "";
+
     /**
      * ゲームデータをロードする
      **/

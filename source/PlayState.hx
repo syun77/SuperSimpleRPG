@@ -79,6 +79,33 @@ class PlayState extends FlxState {
         // 背景色設定
         bgColor = FlxColor.SILVER;
 
+        // BGM再生
+        var name:String = "004";
+
+        switch(Reg.stage) {
+            case 1, 2, 3: name = "001";
+            case 4, 5, 6: name = "002";
+            case 7, 8, 9: name = "003";
+            default: name = "004";
+        }
+
+        var checkPlay = function():Bool {
+            if(FlxG.sound.music == null) {
+                return true;
+            }
+            if(FlxG.sound.music.active == false) {
+                return true;
+            }
+            if(Reg.lastPlayMusic != name) {
+                return true;
+            }
+            return false;
+        }
+        if(checkPlay()) {
+            FlxG.sound.playMusic(name);
+            Reg.lastPlayMusic = name;
+        }
+
         // ステータス背景
         var waku = new FlxSprite(240, 0);
         waku.makeGraphic(80, 240, FlxColor.BLACK);
@@ -350,6 +377,7 @@ class PlayState extends FlxState {
             }
 
             case State.GameoverInit:
+            FlxG.sound.music.stop();
             _timer--;
             if(_timer < 1) {
                 _state = State.GameoverMain;

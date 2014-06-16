@@ -32,7 +32,10 @@
 	<assets path="assets" />
 
 	<assets path="assets/music" if="flash" exclude="ogg">
-		
+		<sound path="L001.mp3" id="001" />
+		<sound path="L002.mp3" id="002" />
+		<sound path="L003.mp3" id="003" />
+		<sound path="L004.mp3" id="004" />
 	</assets>
 	<assets path="assets/sounds" if="flash" exclude="ogg">
 		<sound path="bomb2.mp3" id="damage" />
@@ -48,6 +51,10 @@
 	</assets>
 
 	<assets path="assets/music" unless="flash">
+		<sound path="L001.ogg" id="001" />
+		<sound path="L002.ogg" id="002" />
+		<sound path="L003.ogg" id="003" />
+		<sound path="L004.ogg" id="004" />
 	</assets>
 	<assets path="assets/sounds" unless="flash">
 		<sound path="bomb2.ogg" id="damage" />
