@@ -359,6 +359,7 @@ class PlayState extends FlxState {
             case State.GameoverMain:
             if(_isPressDecide()) {
                 FlxG.resetState();
+                FlxG.sound.play("pi");
             }
 
             case State.StageclearInit:
@@ -370,6 +371,7 @@ class PlayState extends FlxState {
 
             case State.StageclearMain:
             if(_isPressDecide()) {
+                FlxG.sound.play("pi");
                 Reg.nextStage();
                 if(Reg.isClearAllStage()) {
                     // 全ステージクリア
@@ -417,6 +419,7 @@ class PlayState extends FlxState {
             _player.active = false;
             _menuRetry.appear();
             _state = State.RetryMenu;
+            FlxG.sound.play("pi");
             return;
         }
 
@@ -530,19 +533,23 @@ class PlayState extends FlxState {
             case Item.ID_BANANA:
                 player.addHp(1); // HP回復
                 eft.init(EffectTextMode.Recover, px, py, 1);
+                FlxG.sound.play("eat");
 
             case Item.ID_HEART:
                 var v:Int = player.getHpMax() - player.getHp();
                 player.addHp(v); // HPが最大まで回復
                 eft.init(EffectTextMode.Recover, px, py, v);
+                FlxG.sound.play("eat");
 
             case Item.ID_POWER:
                 player.levelUp(); // レベルアップ
                 eft.init(EffectTextMode.LevelUp, px, py);
+                FlxG.sound.play("levelup");
 
             case Item.ID_KEY:
                 player.addKey(); // カギを取得
                 eft.init(EffectTextMode.Key, px, py);
+                FlxG.sound.play("key");
         }
         item.vanish();
     }
@@ -563,6 +570,7 @@ class PlayState extends FlxState {
             var px:Float = player.x;
             var py:Float = player.y;
             eft.init(EffectTextMode.LevelDown, px, py);
+            FlxG.sound.play("leveldown");
         }
 
         // 鉄球消滅

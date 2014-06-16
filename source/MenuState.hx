@@ -22,6 +22,9 @@ class MenuState extends FlxState {
 	 * 生成
 	 */
     override public function create():Void {
+
+        FlxG.sound.volume = 1;
+
         super.create();
 
         bgColor = FlxColor.BLACK;
@@ -73,12 +76,14 @@ class MenuState extends FlxState {
         if(_bSelect) {
             _txSelect.text = "SELECT STAGE < " + Reg.stage + "/" + Reg.stageMax + " >";
             if(FlxG.keys.justPressed.LEFT) {
+                FlxG.sound.play("pi");
                 Reg.stage--;
                 if(Reg.stage <= 0) {
                     Reg.stage = Reg.stageMax;
                 }
             }
             if(FlxG.keys.justPressed.RIGHT) {
+                FlxG.sound.play("pi");
                 Reg.stage++;
                 if(Reg.stage > Reg.stageMax) {
                     Reg.stage = 1;
@@ -90,6 +95,7 @@ class MenuState extends FlxState {
         _txPresskey.visible = (_timer%80 < 60);
 
         if(FlxG.keys.anyJustPressed(["Z", "SPACE"])) {
+            FlxG.sound.play("push");
             if(_bSelect) {
 
             }

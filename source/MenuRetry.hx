@@ -75,6 +75,7 @@ class MenuRetry extends FlxSprite{
         super.update();
 
         if(FlxG.keys.justPressed.UP) {
+            FlxG.sound.play("pi");
             _cursor--;
             if(_cursor < 0) {
                 _cursor = SEL_CANCEL;
@@ -82,6 +83,7 @@ class MenuRetry extends FlxSprite{
         }
 
         if(FlxG.keys.justPressed.DOWN) {
+            FlxG.sound.play("pi");
             _cursor++;
             if(_cursor > SEL_CANCEL) {
                 _cursor = 0;
@@ -91,11 +93,13 @@ class MenuRetry extends FlxSprite{
 
         if(FlxG.keys.anyJustPressed(["SPACE", "Z"])) {
             disappear();
+            FlxG.sound.play("push");
         }
 
         if(FlxG.keys.anyJustPressed(["SHIFT", "X"])) {
             _cursor = SEL_CANCEL;
             disappear();
+            FlxG.sound.play("cancel");
         }
 
         // カーソル位置の更新

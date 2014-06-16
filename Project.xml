@@ -30,6 +30,37 @@
 	<set name="BUILD_DIR" value="export" />
 	<classpath name="source" />
 	<assets path="assets" />
+
+	<assets path="assets/music" if="flash" exclude="ogg">
+		
+	</assets>
+	<assets path="assets/sounds" if="flash" exclude="ogg">
+		<sound path="bomb2.mp3" id="damage" />
+		<sound path="item.mp3"  id="eat" />
+		<sound path="kin.mp3"   id="levelup" />
+		<sound path="kya.mp3"   id="dead" />
+		<sound path="gan.mp3"   id="destroy" />
+		<sound path="money.mp3"   id="key" />
+		<sound path="levelup.mp3" id="leveldown" />
+		<sound path="pi.mp3"      id="pi" />
+		<sound path="push.mp3"    id="push" />
+		<sound path="cancel.mp3"  id="cancel" />
+	</assets>
+
+	<assets path="assets/music" unless="flash">
+	</assets>
+	<assets path="assets/sounds" unless="flash">
+		<sound path="bomb2.ogg" id="damage" />
+		<sound path="item.ogg"  id="eat" />
+		<sound path="kin.ogg"   id="levelup" />
+		<sound path="kya.ogg"   id="dead" />
+		<sound path="gan.ogg"   id="destroy" />
+		<sound path="money.ogg"   id="key" />
+		<sound path="levelup.ogg" id="leveldown" />
+		<sound path="pi.ogg"      id="pi" />
+		<sound path="push.ogg"    id="push" />
+		<sound path="cancel.ogg"  id="cancel" />
+	</assets>
 	
 	<!--------------------------------LIBRARIES------------------------------------->
 

@@ -181,6 +181,8 @@ class Player extends FlxSprite {
         _txHp.visible = false;
         s_emiiter = null;
         s_text = null;
+        FlxG.sound.play("dead");
+        FlxG.sound.play("damage");
     }
 
     /**

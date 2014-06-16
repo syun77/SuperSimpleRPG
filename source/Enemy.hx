@@ -1,5 +1,6 @@
 package ;
 
+import flixel.FlxG;
 import flixel.util.FlxAngle;
 import flixel.util.FlxRandom;
 import flixel.FlxSprite;
@@ -50,6 +51,7 @@ class Enemy extends FlxSprite {
      * 消滅
      **/
     public function vanish():Void {
+        FlxG.sound.play("destroy");
         kill();
     }
 
