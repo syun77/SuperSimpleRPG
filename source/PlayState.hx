@@ -400,15 +400,12 @@ class PlayState extends FlxState {
             case State.StageclearMain:
             if(_isPressDecide()) {
                 FlxG.sound.play("pi");
-                Reg.nextStage();
-                if(Reg.isClearAllStage()) {
-                    // 全ステージクリア
-                    FlxG.switchState(new EndingState());
-                }
-                else {
+                if(Reg.nextStage()) {
                     // 次のステージを開始する
                     FlxG.resetState();
                 }
+                // 全ステージクリア
+                FlxG.switchState(new EndingState());
             }
         }
 

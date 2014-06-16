@@ -75,17 +75,23 @@ class Reg {
 
     /**
      * 次のステージへ進む
+     * @return 次のステージがあればtrue
      **/
-    public static function nextStage():Void {
+    public static function nextStage():Bool {
         stage++;
         if(stage > STAGE_MAX) {
             stage = STAGE_MAX;
+            // ゲームクリア
+            return false;
         }
 
         if(stage > stageMax) {
             stageMax = stage;
             save();
         }
+
+        // まだ次がある
+        return true;
     }
 
     /**
