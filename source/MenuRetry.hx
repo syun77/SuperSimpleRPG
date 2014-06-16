@@ -1,4 +1,5 @@
 package ;
+import flixel.group.FlxTypedGroup;
 import flixel.util.FlxColor;
 import flixel.FlxSprite;
 import flixel.text.FlxText;
@@ -9,10 +10,16 @@ import flixel.FlxG;
  **/
 class MenuRetry extends FlxSprite{
 
-    private var _text:FlxText;
-    private var _text2:FlxText;
-    // リトライするかどうか
-    private var _bRetry:Bool;
+    public static inline var SEL_RETRY = 0; // リトライする
+    public static inline var SEL_TITLE = 1; // タイトルへ戻る
+    public static inline var SEL_CANCEL = 2; // キャンセル
+
+    private var POS_Y = 64;
+    private var POS_DY = 12;
+
+    private var _txCursor:FlxText;
+    private var _texts:FlxTypedGroup<FlxText>;
+    private var _cursor:Int;
 
     public function new() {
         var w = 64;
@@ -21,54 +28,76 @@ class MenuRetry extends FlxSprite{
         makeGraphic(cast dispW, w, FlxColor.BLACK);
         alpha = 0.5;
 
-        _text = new FlxText(0, FlxG.height/2 - w/4, dispW);
-        _text.alignment = "center";
-        _text.size = 10;
-        _text.text = "Give up to press Z or Space.";
-        _text2 = new FlxText(0, FlxG.height/2 + w/4, dispW);
-        _text2.alignment = "center";
-        _text2.text = "(cancel to press X or Shift.)";
-
-        _bRetry = false;
+        _texts = new FlxTypedGroup<FlxText>();
+        var x = 64;
+        var y = POS_Y;
+        var dy = POS_DY;
+        for(msg in ["RETRY", "BACK TO TITLE", "CANCEL"]) {
+            var tx = new FlxText(x, y);
+            tx.text = msg;
+            _texts.add(tx);
+            y += dy;
+        }
+        // カーソル
+        _txCursor = new FlxText(x-12, 0);
+        _txCursor.text = ">";
+        _texts.add(_txCursor);
 
         // 非表示にする
         disappear();
     }
 
-    public function isRetry():Bool { return _bRetry; }
-
     /**
      * 子要素を登録
      **/
     public function addChild():Void {
-        FlxG.state.add(_text);
-        FlxG.state.add(_text2);
+        FlxG.state.add(_texts);
     }
 
     public function appear():Void {
-        _text.visible = true;
-        _text2.visible = true;
-        _bRetry = false;
+        _texts.visible = true;
+        _txCursor.visible = true;
+        _cursor = SEL_CANCEL;
         revive();
     }
 
     public function disappear():Void {
-        _text.visible = false;
-        _text2.visible = false;
+        _texts.visible = false;
+        _txCursor.visible = false;
         kill();
+    }
+
+    public function getSelected():Int {
+        return _cursor;
     }
 
     override public function update():Void {
         super.update();
 
+        if(FlxG.keys.justPressed("UP") {
+            _cursor--;
+            if(_cursor < 0) {
+                _cursor = SEL_CANCEL;
+            }
+        }
+
+        if(FlxG.keys.justPressed("DOWN")) {
+            _cursor++;
+            if(_cursor >= SEL_CANCEL) {
+                _cursor = 0;
+            }
+        }
+
+        _txCursor.y = POS_Y + POS_DY * _cursor;
+
         if(FlxG.keys.anyJustPressed(["SPACE", "Z"])) {
             disappear();
-            _bRetry = true; // リトライする
         }
 
         if(FlxG.keys.anyJustPressed(["SHIFT", "X"])) {
+            _cursor = SEL_CANCEL;
             disappear();
-            _bRetry = false; // リトライしない
         }
+
     }
 }

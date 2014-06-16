@@ -336,9 +336,14 @@ class PlayState extends FlxState {
                 // メニューを閉じた
                 _player.active = true;
                 _state = State.Main;
-                if(_menuRetry.isRetry()) {
+                switch(_menuRetry.getSelected()) {
+                    case MenuRetry.SEL_RETRY:
                     // リトライする場合は殺す
                     _player.damage(765);
+
+                    case MenuRetry.SEL_TITLE:
+                    //
+                    FlxG.switchState(new MenuState());
                 }
             }
 

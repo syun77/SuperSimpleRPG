@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b23be74e-fb6e-4718-a6cc-7be1cd1893b8" name="Default" comment="ステージ9実装">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/levels/009.tmx" afterPath="$PROJECT_DIR$/assets/levels/009.tmx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/MenuState.hx" afterPath="$PROJECT_DIR$/source/MenuState.hx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="b23be74e-fb6e-4718-a6cc-7be1cd1893b8" name="Default" comment="ステージ9実装" />
     <ignored path="MyProject.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -66,7 +62,28 @@
     <favorites_list name="MyProject" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="MenuRetry.hx" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/source/MenuRetry.hx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="765" max-vertical-offset="1635">
+              <caret line="90" column="35" selection-start-line="90" selection-start-column="35" selection-end-line="90" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PlayState.hx" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/source/PlayState.hx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.5158184" vertical-offset="4620" max-vertical-offset="9465">
+              <caret line="333" column="32" selection-start-line="333" selection-start-column="32" selection-end-line="333" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -95,7 +112,6 @@
         <option value="$PROJECT_DIR$/source/EffectText.hx" />
         <option value="$PROJECT_DIR$/source/Player.hx" />
         <option value="$PROJECT_DIR$/source/RetryState.hx" />
-        <option value="$PROJECT_DIR$/source/MenuRetry.hx" />
         <option value="$PROJECT_DIR$/source/EnemyInfo.hx" />
         <option value="$PROJECT_DIR$/source/Enemy.hx" />
         <option value="$PROJECT_DIR$/source/MenuEnemy.hx" />
@@ -103,17 +119,18 @@
         <option value="$PROJECT_DIR$/source/EndingState.hx" />
         <option value="$PROJECT_DIR$/source/Main.hx" />
         <option value="$PROJECT_DIR$/source/Lock.hx" />
-        <option value="$PROJECT_DIR$/source/PlayState.hx" />
         <option value="$PROJECT_DIR$/source/Reg.hx" />
         <option value="$PROJECT_DIR$/source/MenuState.hx" />
+        <option value="$PROJECT_DIR$/source/MenuRetry.hx" />
+        <option value="$PROJECT_DIR$/source/PlayState.hx" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
     <option name="y" value="22" />
-    <option name="width" value="1899" />
-    <option name="height" value="1004" />
+    <option name="width" value="1440" />
+    <option name="height" value="824" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -141,7 +158,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -194,6 +210,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -203,7 +220,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="MemberChooser.sorted" value="false" />
-    <property name="options.lastSelected" value="settings.github" />
+    <property name="options.lastSelected" value="vcs.Git" />
     <property name="recentsLimit" value="5" />
     <property name="last_opened_file_path" value="/usr/lib/haxe/lib/flixel-addons" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -380,8 +397,8 @@
     <option name="totallyTimeSpent" value="835000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1899" height="1004" extended-state="0" />
-    <editor active="false" />
+    <frame x="0" y="22" width="1440" height="824" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295711" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -390,13 +407,12 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31376976" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15455034" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2697517" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15416667" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26887417" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -406,6 +422,7 @@
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32847682" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31376976" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -761,14 +778,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/MenuRetry.hx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.54607975" vertical-offset="473" max-vertical-offset="1200">
-          <caret line="58" column="4" selection-start-line="58" selection-start-column="4" selection-end-line="58" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/source/Player.hx">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.264099" vertical-offset="1144" max-vertical-offset="6810">
@@ -801,14 +810,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/PlayState.hx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43589744" vertical-offset="2193" max-vertical-offset="10642">
-          <caret line="151" column="27" selection-start-line="151" selection-start-column="27" selection-end-line="151" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/source/Reg.hx">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6142191" vertical-offset="0" max-vertical-offset="1785">
@@ -821,6 +822,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.495338" vertical-offset="102" max-vertical-offset="1853">
           <caret line="31" column="32" selection-start-line="31" selection-start-column="32" selection-end-line="31" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/MenuRetry.hx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="765" max-vertical-offset="1635">
+          <caret line="90" column="35" selection-start-line="90" selection-start-column="35" selection-end-line="90" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/PlayState.hx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5158184" vertical-offset="4620" max-vertical-offset="9465">
+          <caret line="333" column="32" selection-start-line="333" selection-start-column="32" selection-end-line="333" selection-end-column="33" />
           <folding />
         </state>
       </provider>
