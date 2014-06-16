@@ -27,6 +27,8 @@ class MenuState extends FlxState {
     override public function create():Void {
         super.create();
 
+        bgColor = FlxColor.BLACK;
+
         // セーブデータをロード
         Reg.load();
         Reg.stage = Reg.stageMax;

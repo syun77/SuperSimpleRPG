@@ -14,8 +14,8 @@ class MenuRetry extends FlxSprite{
     public static inline var SEL_TITLE = 1; // タイトルへ戻る
     public static inline var SEL_CANCEL = 2; // キャンセル
 
-    private var POS_Y = 64;
     private var POS_DY = 12;
+    private var POS_Y = 240/2 - 12*1.5;
 
     private var _txCursor:FlxText;
     private var _texts:FlxTypedGroup<FlxText>;
@@ -74,21 +74,20 @@ class MenuRetry extends FlxSprite{
     override public function update():Void {
         super.update();
 
-        if(FlxG.keys.justPressed("UP") {
+        if(FlxG.keys.justPressed.UP) {
             _cursor--;
             if(_cursor < 0) {
                 _cursor = SEL_CANCEL;
             }
         }
 
-        if(FlxG.keys.justPressed("DOWN")) {
+        if(FlxG.keys.justPressed.DOWN) {
             _cursor++;
-            if(_cursor >= SEL_CANCEL) {
+            if(_cursor > SEL_CANCEL) {
                 _cursor = 0;
             }
         }
 
-        _txCursor.y = POS_Y + POS_DY * _cursor;
 
         if(FlxG.keys.anyJustPressed(["SPACE", "Z"])) {
             disappear();
@@ -99,5 +98,7 @@ class MenuRetry extends FlxSprite{
             disappear();
         }
 
+        // カーソル位置の更新
+        _txCursor.y = POS_Y + POS_DY * _cursor;
     }
 }
