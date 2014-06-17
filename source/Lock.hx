@@ -1,5 +1,6 @@
 package ;
 
+import flixel.FlxG;
 import flixel.group.FlxTypedGroup;
 import flixel.FlxSprite;
 
@@ -31,5 +32,6 @@ class Lock extends FlxSprite {
 //        p.init(x+width/2, y+height/2);
 
         kill();
+        FlxG.sound.play("destroy");
     }
 }
