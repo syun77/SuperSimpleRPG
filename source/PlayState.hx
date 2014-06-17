@@ -1,5 +1,6 @@
 package;
 
+import flash.display.BlendMode;
 import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
 import EffectText;
@@ -57,6 +58,7 @@ class PlayState extends FlxState {
 
     // エフェクト
     private var _effectLocks:FlxTypedGroup<ParticleLock>;
+    private var _blackCurtain:BlackCurtain;
 
     // テキスト
     private var _txHp:FlxText;
@@ -178,6 +180,24 @@ class PlayState extends FlxState {
             add(_txKey);
 
         }
+
+        // 開始時の暗幕
+        _blackCurtain = new BlackCurtain();
+        add(_blackCurtain);
+        {
+            var p = new FlxSprite(_player.x-1, _player.y-1);
+            p.makeGraphic(16+2, 16+2);
+            p.blend = BlendMode.ADD;
+            p.alpha = 0.2;
+            var g = new FlxSprite(_goal.x-1, _goal.y-1);
+            g.makeGraphic(16+2, 16+2);
+            g.blend = BlendMode.ADD;
+            g.alpha = 0.2;
+            _blackCurtain.getGroup().add(p);
+            _blackCurtain.getGroup().add(g);
+            add(_blackCurtain.getGroup());
+        }
+
         _txStart = new FlxText(-100, FlxG.height/2-8, FlxG.width*3/4, 16);
         _txStart.alignment = "center";
         _txStart.visible = false;
@@ -395,6 +415,8 @@ class PlayState extends FlxState {
     private function _updateInit():Void {
 
         // 開始演出
+
+        // メッセージ表示
         _txStart.visible = true;
         _txStart.x = -200;
         _txStart.text = "Stage: " + Reg.stage;
@@ -419,6 +441,7 @@ class PlayState extends FlxState {
             _state = State.RetryMenu;
             return;
         }
+
 
         // カベとの衝突判定
         if(_level.collideWithLevel(_player)) {
