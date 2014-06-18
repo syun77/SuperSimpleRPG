@@ -13,7 +13,7 @@ class BlackCurtain extends FlxSprite {
         super();
 
         makeGraphic(cast FlxG.width*3/4, FlxG.height, FlxColor.BLACK);
-        alpha = 0.5;
+        alpha = 0.0;
 
         _group = new FlxTypedGroup<FlxSprite>();
     }
@@ -23,6 +23,9 @@ class BlackCurtain extends FlxSprite {
     }
 
     override public function update():Void {
+        if(alpha < 0.4) {
+            alpha += 0.02;
+        }
         if(FlxG.keys.anyJustPressed(["UP", "LEFT", "DOWN", "RIGHT", "Z", "SPACE", "X", "SHIFT"])) {
             kill();
             _group.kill();

@@ -1,5 +1,6 @@
 package;
 
+import flixel.FlxSprite;
 import flixel.util.FlxColor;
 import flixel.FlxG;
 import flixel.FlxState;
@@ -33,16 +34,19 @@ class MenuState extends FlxState {
         Reg.load();
         Reg.stage = Reg.stageMax;
 
-        _txTitle = new FlxText(0, 80, FlxG.width, 16);
-        _txTitle.alignment = "center";
-        _txTitle.text = "Super Simple RPG";
-        _txPresskey = new FlxText(0, FlxG.height/2+48, FlxG.width, 8);
+        var bg = new FlxSprite(0, 0);
+        bg.loadGraphic("assets/images/title.png");
+        add(bg);
+        _txPresskey = new FlxText(0, FlxG.height/2+48, FlxG.width, 12);
         _txPresskey.alignment = "center";
+        _txPresskey.color = FlxColor.WHITE;
+        _txPresskey.borderStyle = FlxText.BORDER_OUTLINE;
         _txPresskey.text = "Start to press Z or Space";
-        _txCopyright = new FlxText(0, FlxG.height-32, FlxG.width, 6);
+        _txCopyright = new FlxText(0, FlxG.height-16, FlxG.width, 8);
         _txCopyright.alignment = "center";
+        _txCopyright.color = FlxColor.WHITE;
+        _txCopyright.borderStyle = FlxText.BORDER_OUTLINE;
         _txCopyright.text = "(C)2014 2dgames.jp";
-        add(_txTitle);
         add(_txPresskey);
         add(_txCopyright);
 
@@ -50,8 +54,9 @@ class MenuState extends FlxState {
         if(_max > 1) {
             // ステージ2以上をクリアしている
             _bSelect = true; // ステージセレクト可能
-            _txSelect = new FlxText(0, FlxG.height/2+16, FlxG.width, 8);
+            _txSelect = new FlxText(0, FlxG.height/2+16, FlxG.width, 12);
             _txSelect.alignment = "center";
+            _txSelect.borderStyle = FlxText.BORDER_OUTLINE;
             _txSelect.color = FlxColor.YELLOW;
             add(_txSelect);
         }

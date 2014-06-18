@@ -212,14 +212,18 @@ class PlayState extends FlxState {
         _blackCurtain = new BlackCurtain();
         add(_blackCurtain);
         {
-            var p = new FlxSprite(_player.x-1, _player.y-1);
-            p.makeGraphic(16+2, 16+2);
+            var p = new FlxSprite(_player.x, _player.y);
+            p.loadGraphic("assets/images/miku.png", true);
+            p.animation.add("play", [0]);
+            p.animation.play("play");
             p.blend = BlendMode.ADD;
-            p.alpha = 0.2;
-            var g = new FlxSprite(_goal.x-1, _goal.y-1);
-            g.makeGraphic(16+2, 16+2);
+            p.alpha = 0.8;
+            var g = new FlxSprite(_goal.x, _goal.y);
+            g.loadGraphic("assets/images/goal.png", true);
+            g.animation.add("play", [0]);
+            g.animation.play("play");
             g.blend = BlendMode.ADD;
-            g.alpha = 0.2;
+            g.alpha = 0.8;
             _blackCurtain.getGroup().add(p);
             _blackCurtain.getGroup().add(g);
             add(_blackCurtain.getGroup());
@@ -431,9 +435,9 @@ class PlayState extends FlxState {
 
         _updateText();
 
-        //#if !FLX_NO_DEBUG
+        #if !FLX_NO_DEBUG
         _updateDebug();
-        //#end
+        #end
     }
 
     /**
