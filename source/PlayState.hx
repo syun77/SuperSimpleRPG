@@ -428,14 +428,16 @@ class PlayState extends FlxState {
                     // 次のステージを開始する
                     FlxG.resetState();
                 }
-                // 全ステージクリア
-                FlxG.switchState(new EndingState());
+                else {
+                    // 全ステージクリア
+                    FlxG.switchState(new EndingState());
+                }
             }
         }
 
         _updateText();
 
-        #if !FLX_NO_DEBUG
+        #if FLX_NO_DEBUG
         _updateDebug();
         #end
     }

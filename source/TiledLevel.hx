@@ -127,7 +127,6 @@ class TiledLevel extends TiledMap {
             case "player_start":
             // プレイヤーのスタート地点
             state.createPlayer(px, py);
-            trace('player_start:$px,$py');
 
         }
 
